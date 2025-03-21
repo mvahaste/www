@@ -15,7 +15,19 @@ export default function Home() {
         viewport={{ once: true }}
         className="mb-2 text-2xl font-bold"
       >
-        Hi, I{"'"}m Mikk 👋
+        Hi, I{"'"}m Mikk{" "}
+        <motion.span
+          animate={{
+            rotate: [0, 20, -10, 20, -5, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            ease: "easeInOut",
+          }}
+          className="inline-block origin-[70%_70%]"
+        >
+          👋
+        </motion.span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 5 }}
