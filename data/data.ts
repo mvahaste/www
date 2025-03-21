@@ -1,13 +1,16 @@
+import {
+  LucideGithub,
+  LucideIcon,
+  LucideLinkedin,
+  LucideMail,
+} from "lucide-react";
 import { IconType } from "react-icons";
-import { MdEmail } from "react-icons/md";
 import {
   SiGithub,
-  SiGmail,
   SiLinkedin,
   SiMaildotru,
   SiNextdotjs,
   SiPostgresql,
-  SiProtonmail,
   SiPython,
   SiSupabase,
   SiTailwindcss,
@@ -17,7 +20,7 @@ import {
 export interface Social {
   id: number;
   name: string;
-  icon: IconType;
+  icon: LucideIcon;
   url: string;
 }
 
@@ -25,19 +28,19 @@ export const socials: Social[] = [
   {
     id: 1,
     name: "GitHub",
-    icon: SiGithub,
+    icon: LucideGithub,
     url: "https://github.com/mvahaste",
   },
   {
     id: 2,
     name: "LinkedIn",
-    icon: SiLinkedin,
+    icon: LucideLinkedin,
     url: "https://www.linkedin.com/in/mvahaste",
   },
   {
     id: 3,
     name: "Email",
-    icon: SiMaildotru,
+    icon: LucideMail,
     url: "mailto:mvahaste@proton.me",
   },
 ];
