@@ -47,10 +47,7 @@ const ThemeSwitcher = () => {
           </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        className="w-content text-muted-foreground"
-        align="start"
-      >
+      <DropdownMenuContent className="w-content" align="start">
         <DropdownMenuRadioGroup
           value={theme}
           onValueChange={(e) => setTheme(e)}
