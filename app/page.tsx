@@ -9,11 +9,13 @@ export default function Home() {
       {/* About Me */}
       <h2 className="mb-2 text-2xl font-bold">Hi, I{"'"}m Mikk 👋</h2>
       <p>
-        I{"'"}m a 22-year-old student at the University of Tartu, currently in
-        my second year. I{"'"}ve always been into computers and programming, I
-        first started messing around with python and quickly got hooked on web
-        development, doing both front and back-end, with a larger focus on the
-        former.
+        I{"'"}m a <span className="font-medium">22-year-old</span> student at
+        the <span className="font-medium">University of Tartu</span>, currently
+        in my second year, mainly focusing on{" "}
+        <span className="font-medium">web development</span>. I{"'"}ve always
+        been into computers and programming, I first started messing around with
+        python and quickly got hooked on web development, doing both front and
+        back-end, with a larger focus on the former.
       </p>
       {/* Contact */}
       <h2 className="mt-8 mb-2 text-2xl font-bold">Contact 📫</h2>
