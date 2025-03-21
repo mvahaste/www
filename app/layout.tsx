@@ -39,19 +39,12 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col items-center">
             <div className="flex w-full flex-1 flex-col items-center">
               <Header />
-              <div className="w-full max-w-[65ch] flex-grow p-4">
+              <div className="w-full max-w-[70ch] flex-grow p-4">
                 {children}
               </div>
             </div>
             <Footer />
           </main>
-          {/* <main className="flex min-h-screen flex-col"> */}
-          {/*   <Header /> */}
-          {/*   <div className="mx-auto w-full max-w-[65ch] flex-grow p-4 font-medium"> */}
-          {/*     {children} */}
-          {/*   </div> */}
-          {/*   <Footer /> */}
-          {/* </main> */}
         </ThemeProvider>
       </body>
     </html>

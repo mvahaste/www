@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-muted-foreground w-full p-4 pt-8 text-center text-sm">
+    <footer className="text-muted-foreground w-full p-4 pt-10 text-center text-sm">
       <p>
         View the source code on{" "}
         <a
