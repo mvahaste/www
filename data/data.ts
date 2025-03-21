@@ -114,7 +114,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "HansaMedical Tellimiskeskkond",
+    title: "Hansa Medical Tellimiskeskkond",
     description:
       "A web platform developed for Hansa Medical partners to conveniently order medical supplies and equipment, as well as review past orders and active contracts.",
     image: "/images/projects/hansamedical-tellimiskeskkond.png",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "HansaMedical Uneravi",
+    title: "Hansa Medical Uneravi",
     description:
       "An e-commerce website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
     image: "/images/projects/hansamedical-uneravi.png",
