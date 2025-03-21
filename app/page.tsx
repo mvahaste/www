@@ -2,13 +2,27 @@ import EmailButton from "@/components/email-button";
 import ProjectCard from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import { Project, projects, Skill, skills, Social, socials } from "@/data/data";
+import * as motion from "motion/react-client";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-2">
       {/* About Me */}
-      <h2 className="mb-2 text-2xl font-bold">Hi, I{"'"}m Mikk 👋</h2>
-      <p>
+      <motion.h2
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mb-2 text-2xl font-bold"
+      >
+        Hi, I{"'"}m Mikk 👋
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+      >
         I{"'"}m a <span className="font-medium">22-year-old</span> student at
         the <span className="font-medium">University of Tartu</span>, currently
         in my second year, mainly focusing on{" "}
@@ -16,14 +30,33 @@ export default function Home() {
         been into computers and programming, I first started messing around with
         python and quickly got hooked on web development, doing both front and
         back-end, with a larger focus on the former.
-      </p>
+      </motion.p>
       {/* Contact */}
-      <h2 className="mt-8 mb-2 text-2xl font-bold">Contact 📫</h2>
-      <p>
+      <motion.h2
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-8 mb-2 text-2xl font-bold"
+      >
+        Contact 📫
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+      >
         Let{"'"}s get in touch, email me at{" "}
         <span className="font-medium">mvahaste@proton.me</span>!
-      </p>
-      <div className="mt-2 flex flex-wrap gap-2">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-2 flex flex-wrap gap-2"
+      >
         {socials.map((social: Social) => {
           if (social.name === "Email") {
             return <EmailButton key={social.id} email={social.url} />;
@@ -45,21 +78,61 @@ export default function Home() {
             </Button>
           );
         })}
-      </div>
+      </motion.div>
       {/* Projects */}
-      <h2 className="mt-8 text-2xl font-bold">Projects 🚀</h2>
-      <p>
+      <motion.h2
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-8 text-2xl font-bold"
+      >
+        Projects 🚀
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+      >
         Some of my projects, unfortunately some of the source code is private.
-      </p>
-      <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2"
+      >
         {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
-      </div>
+      </motion.div>
       {/* Skills / Technologies */}
-      <h2 className="mt-8 text-2xl font-bold">Skills 🎨</h2>
-      <p>Some of the languages I know and technologies I use.</p>
-      <div className="mt-2 flex flex-wrap gap-2">
+      <motion.h2
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-8 text-2xl font-bold"
+      >
+        Skills 🎨
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+      >
+        Some of the languages I know and technologies I use.
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="mt-2 flex flex-wrap gap-2"
+      >
         {skills.map((skill: Skill) => {
           const Icon = skill.icon;
 
@@ -73,7 +146,7 @@ export default function Home() {
             </span>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

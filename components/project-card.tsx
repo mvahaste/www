@@ -2,6 +2,7 @@ import { Project } from "@/data/data";
 import { LucideGithub, LucideGlobe } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import * as motion from "motion/react-client";
 
 interface ProjectCardProps {
   project: Project;
@@ -9,8 +10,12 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div
+    <motion.div
       key={project.id}
+      initial={{ opacity: 0, y: 5 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      viewport={{ once: true }}
       className="bg-card text-card-foreground flex flex-col gap-1 rounded-xl border p-6 text-sm"
     >
       <Image
@@ -56,6 +61,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </a>
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }
