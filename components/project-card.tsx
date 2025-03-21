@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="bg-card text-card-foreground flex flex-col gap-1 rounded-xl border p-6 text-sm"
     >
       <Image
-        className="mb-2 aspect-[5/3] h-auto w-full rounded-sm object-cover"
+        className="mb-2 aspect-[16/9] h-auto w-full rounded-sm object-cover"
         width={500}
         height={300}
         src={project.image}
