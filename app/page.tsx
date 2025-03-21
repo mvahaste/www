@@ -16,7 +16,7 @@ export default function Home() {
       </p>
       {/* Contact */}
       <h2 className="mt-8 mb-2 text-2xl font-bold">Contact 📫</h2>
-      <p className="flex flex-wrap gap-1">
+      <p>
         Let{"'"}s get in touch, email me at{" "}
         <span className="font-medium">mvahaste@proton.me</span>!
       </p>
