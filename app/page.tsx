@@ -6,18 +6,18 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-2">
       {/* About Me */}
-      <h2 className="mb-2 text-2xl font-bold">Hi, I'm Mikk 👋</h2>
+      <h2 className="mb-2 text-2xl font-bold">Hi, I{"'"}m Mikk 👋</h2>
       <p>
-        I'm a 22-year-old student at the University of Tartu, currently in my
-        second year. I've always been into computers and programming, I first
-        started messing around with python and quickly got hooked on web
+        I{"'"}m a 22-year-old student at the University of Tartu, currently in
+        my second year. I{"'"}ve always been into computers and programming, I
+        first started messing around with python and quickly got hooked on web
         development, doing both front and back-end, with a larger focus on the
         former.
       </p>
       {/* Contact */}
       <h2 className="mt-8 mb-2 text-2xl font-bold">Contact 📫</h2>
       <p className="flex flex-wrap gap-1">
-        Let's get in touch, email me at{" "}
+        Let{"'"}s get in touch, email me at{" "}
         <span className="font-medium">mvahaste@proton.me</span>!
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
