@@ -6,9 +6,6 @@ import {
 } from "lucide-react";
 import { IconType } from "react-icons";
 import {
-  SiGithub,
-  SiLinkedin,
-  SiMaildotru,
   SiNextdotjs,
   SiPostgresql,
   SiPython,
@@ -27,21 +24,21 @@ export interface Social {
 export const socials: Social[] = [
   {
     id: 1,
+    name: "Email",
+    icon: LucideMail,
+    url: "mvahaste@proton.me",
+  },
+  {
+    id: 2,
     name: "GitHub",
     icon: LucideGithub,
     url: "https://github.com/mvahaste",
   },
   {
-    id: 2,
+    id: 3,
     name: "LinkedIn",
     icon: LucideLinkedin,
     url: "https://www.linkedin.com/in/mvahaste",
-  },
-  {
-    id: 3,
-    name: "Email",
-    icon: LucideMail,
-    url: "mailto:mvahaste@proton.me",
   },
 ];
 

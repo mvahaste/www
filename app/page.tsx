@@ -1,3 +1,4 @@
+import EmailButton from "@/components/email-button";
 import ProjectCard from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import { Project, projects, Skill, skills, Social, socials } from "@/data/data";
@@ -22,6 +23,10 @@ export default function Home() {
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
         {socials.map((social: Social) => {
+          if (social.name === "Email") {
+            return <EmailButton key={social.id} email={social.url} />;
+          }
+
           const Icon = social.icon;
 
           return (
