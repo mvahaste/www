@@ -30,26 +30,21 @@ const ThemeSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="hover:cursor-pointer">
+        <Button
+          variant="ghost"
+          className="flex items-center gap-2 border hover:cursor-pointer"
+        >
           {theme === "light" ? (
-            <Sun
-              key="light"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
+            <Sun key="light" size={ICON_SIZE} />
           ) : theme === "dark" ? (
-            <Moon
-              key="dark"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
+            <Moon key="dark" size={ICON_SIZE} />
           ) : (
-            <Laptop
-              key="system"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
+            <Laptop key="system" size={ICON_SIZE} />
           )}
+          <span>
+            {theme?.substring(0, 1).toUpperCase().concat(theme?.substring(1)) ??
+              "Theme"}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
