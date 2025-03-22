@@ -85,7 +85,10 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: {
+    light?: string;
+    dark?: string;
+  };
   stack: string[];
   url?: string;
   source?: string;
@@ -97,7 +100,10 @@ export const projects: Project[] = [
     title: "Linkbook",
     description:
       "A lightweight link bookmarking web app that helps you organize and save important links, with support for metadata autofill and custom tags.",
-    image: "/images/projects/linkbook.png",
+    image: {
+      light: "/images/projects/linkbook-light.png",
+      dark: "/images/projects/linkbook-dark.png",
+    },
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     url: "https://linkbook.mvahaste.dev",
     source: "https://github.com/mvahaste/linkbook",
@@ -107,7 +113,10 @@ export const projects: Project[] = [
     title: "Chirp",
     description:
       "A simple Twitter clone built to explore and learn Supabase. Features include creating posts, liking and replying to posts, following users, and editing profiles.",
-    image: "/images/projects/chirp.png",
+    image: {
+      light: "/images/projects/chirp-light.png",
+      dark: "/images/projects/chirp-dark.png",
+    },
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     url: "https://chirp.mvahaste.dev",
     source: "https://github.com/mvahaste/chirp",
@@ -117,7 +126,7 @@ export const projects: Project[] = [
     title: "Hansa Medical Tellimiskeskkond",
     description:
       "A web platform developed for Hansa Medical partners to conveniently order medical supplies and equipment, as well as review past orders and active contracts.",
-    image: "/images/projects/hansamedical-tellimiskeskkond.png",
+    image: { light: "/images/projects/hansamedical-tellimiskeskkond.png" },
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     url: "https://tellimine.hansamedical.ee",
   },
@@ -126,7 +135,7 @@ export const projects: Project[] = [
     title: "Hansa Medical Uneravi",
     description:
       "An e-commerce website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
-    image: "/images/projects/hansamedical-uneravi.png",
+    image: { light: "/images/projects/hansamedical-uneravi.png" },
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     url: "https://uneravi.hansamedical.ee",
   },
