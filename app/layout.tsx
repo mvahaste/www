@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({
             <Footer />
           </main>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
