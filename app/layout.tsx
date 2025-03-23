@@ -18,7 +18,10 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "mvahaste.dev",
-  description: "Mikk Vahase's portfolio",
+  description:
+    "Hi, I'm Mikk, a 22-year-old student at the University of Tartu, currently in my second year, mainly focusing on web development.",
+  creator: "Mikk Vahaste",
+  keywords: ["mikk", "vahaste", "web", "development", "student", "tartu"],
 };
 
 export default function RootLayout({
