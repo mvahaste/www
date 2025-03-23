@@ -10,6 +10,12 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const projectImage = () => {
+    const imageProps = {
+      width: 500,
+      height: 300,
+      alt: "Project thumbnail",
+    };
+
     const className = "aspect-[16/9] h-auto w-full object-cover";
 
     // If both light and dark images are provided, use the appropriate one based on the theme
@@ -18,17 +24,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <>
           <Image
             className={`${className} dark:hidden`}
-            width={500}
-            height={300}
             src={project.image.light}
-            alt="Project thumbnail"
+            {...imageProps}
           />
           <Image
             className={`${className} hidden dark:block`}
-            width={500}
-            height={300}
             src={project.image.dark}
-            alt="Project thumbnail"
+            {...imageProps}
           />
         </>
       );
@@ -38,10 +40,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return (
       <Image
         className={className}
-        width={500}
-        height={300}
         src={(project.image?.light || project.image?.dark)!}
-        alt="Project thumbnail"
+        {...imageProps}
       />
     );
   };
@@ -75,7 +75,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="mt-3 grid flex-grow grid-cols-2 items-end gap-4">
         <Button asChild disabled={!project.url}>
           <a
-            href={project.url}
+            href={project.url ?? "#"}
             target="_blank"
             rel="noopener noreferrer"
             className={`${!project.url ? "pointer-events-none opacity-50" : ""} flex items-center gap-2`}
@@ -86,7 +86,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </Button>
         <Button asChild disabled={!project.source}>
           <a
-            href={project.source}
+            href={project.source ?? "#"}
             target="_blank"
             rel="noopener noreferrer"
             className={`${!project.source ? "pointer-events-none opacity-50" : ""} flex items-center gap-2`}

@@ -7,7 +7,7 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-4xl flex-row items-center justify-between p-4">
         <div className="flex flex-row items-center gap-3">
           <Avatar>
-            <AvatarImage src="images/avatar.jpg" />
+            <AvatarImage src="images/avatar.jpg" alt="mvahaste avatar image" />
             <AvatarFallback className="text-xs">MV</AvatarFallback>
           </Avatar>
           <h1 className="font-bold">mvahaste</h1>
