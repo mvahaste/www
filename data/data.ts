@@ -85,7 +85,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image: {
+  image?: {
     light?: string;
     dark?: string;
   };
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     title: "Hansa Medical Tellimiskeskkond",
     description:
       "A web platform developed for Hansa Medical partners to conveniently order medical supplies and equipment, as well as review past orders and active contracts.",
-    image: { light: "/images/projects/hansamedical-tellimiskeskkond.png" },
+    // image: { light: "/images/projects/hansamedical-tellimiskeskkond.png" },
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     url: "https://tellimine.hansamedical.ee",
   },
@@ -135,7 +135,7 @@ export const projects: Project[] = [
     title: "Hansa Medical Uneravi",
     description:
       "An e-commerce website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
-    image: { light: "/images/projects/hansamedical-uneravi.png" },
+    // image: { light: "/images/projects/hansamedical-uneravi.png" },
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     url: "https://uneravi.hansamedical.ee",
   },
