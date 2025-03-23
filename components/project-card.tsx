@@ -12,6 +12,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const projectImage = () => {
     const className = "aspect-[16/9] h-auto w-full object-cover";
 
+    // If both light and dark images are provided, use the appropriate one based on the theme
     if (project.image?.light && project.image?.dark) {
       return (
         <>
@@ -33,6 +34,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       );
     }
 
+    // If only one image is provided, use whichever is available
     return (
       <Image
         className={className}
@@ -53,7 +55,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       viewport={{ once: true }}
       className="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border p-6 text-sm"
     >
-      {/* Project image */}
       {project.image && (
         <div className="mb-2 aspect-[16/9] overflow-hidden rounded-md border">
           {projectImage()}
