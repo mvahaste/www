@@ -42,7 +42,7 @@ export default function EmailButton({ email, className }: EmailButtonProps) {
           Email
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-content" align="start">
         <DropdownMenuItem onClick={copy} className="hover:cursor-pointer">
           <LucideCopy className="text-foreground" />
           <span>{copyText}</span>
