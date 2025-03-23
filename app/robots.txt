@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /images/projects/
+
+# Sitemap: https://www.mvahaste.dev/sitemap.xml
