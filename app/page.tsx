@@ -77,7 +77,7 @@ export default function Home() {
           const Icon = social.icon;
 
           return (
-            <Button key={social.id} asChild>
+            <Button key={social.id} asChild variant="secondary">
               <a
                 className="flex items-center gap-2"
                 href={social.url}

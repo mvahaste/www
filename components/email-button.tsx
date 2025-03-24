@@ -33,6 +33,7 @@ export default function EmailButton({ email, className }: EmailButtonProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
+          variant="secondary"
           className={cn(
             "flex items-center gap-2 hover:cursor-pointer",
             className,
