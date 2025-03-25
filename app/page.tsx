@@ -39,9 +39,17 @@ export default function Home() {
         the <span className="font-medium">University of Tartu</span>, currently
         in my second year, mainly focusing on{" "}
         <span className="font-medium">web development</span>. I{"'"}ve always
-        been into computers and programming, I first started messing around with
-        python and quickly got hooked on web development, doing both front and
+        been into computers and programming—I first started messing around with
+        Python and quickly got hooked on web development, doing both front and
         back-end, with a larger focus on the former.
+        <br />
+        <br />
+        Outside of coding, I enjoy playing video games—
+        <span className="font-medium">Elden Ring</span> and{" "}
+        <span className="font-medium">Subnautica</span> are probably my
+        favorites, and I love the <span className="font-medium">Souls</span>{" "}
+        series in general. I also listen to a lot of music, hit the gym and
+        occasionally read when I get the chance.
       </motion.p>
       {/* Contact */}
       <motion.h2
