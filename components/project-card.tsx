@@ -1,7 +1,12 @@
 import { Project } from "@/data/data";
-import { LucideCode, LucideGlobe } from "lucide-react";
-import { Button } from "./ui/button";
+import { LucideCodeXml, LucideExternalLink } from "lucide-react";
 import * as motion from "motion/react-client";
+import { Lora } from "next/font/google";
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: "variable",
+});
 
 interface ProjectCardProps {
   project: Project;
@@ -15,43 +20,43 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         hidden: { opacity: 0, x: -10 },
         visible: { opacity: 1, x: 0 },
       }}
-      className="bg-card dark:bg-card/50 text-card-foreground flex flex-col gap-2 rounded-xl border p-6 text-sm"
+      className="bg-card dark:bg-card/50 text-card-foreground flex flex-col gap-2 overflow-hidden rounded-xl border text-sm"
     >
-      <h3 className="text-base font-bold">{project.title}</h3>
-      <p>{project.description}</p>
-      <div className="mt-2 flex flex-wrap gap-2">
-        {project.stack.map((s: string) => (
-          <span
-            key={s}
-            className="bg-muted text-muted-foreground rounded-full px-2.5 py-1 text-xs font-semibold"
-          >
-            {s}
-          </span>
-        ))}
+      <div className="flex flex-col gap-2 p-6 pb-0">
+        <h3 className={`${lora.className} text-base font-bold`}>
+          {project.title}
+        </h3>
+        <p>{project.description}</p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {project.stack.map((s: string) => (
+            <span
+              key={s}
+              className="bg-muted dark:bg-muted/25 text-muted-foreground rounded-full px-2.5 py-1 text-xs font-semibold"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className="mt-3 grid flex-grow grid-cols-2 items-end gap-4">
-        <Button asChild disabled={!project.url}>
-          <a
-            href={project.url ?? "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${!project.url ? "pointer-events-none opacity-50" : ""} flex items-center gap-2`}
-          >
-            <LucideGlobe />
-            Live
-          </a>
-        </Button>
-        <Button asChild disabled={!project.source}>
-          <a
-            href={project.source ?? "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${!project.source ? "pointer-events-none opacity-50" : ""} flex items-center gap-2`}
-          >
-            <LucideCode />
-            Source
-          </a>
-        </Button>
+      <div className="bg-muted dark:bg-muted/25 text-muted-foreground mt-3 flex justify-between gap-4 border-t px-6 py-4 font-medium">
+        <a
+          href={project.source ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${!project.source ? "pointer-events-none opacity-50" : "hover:text-foreground transition-colors duration-150 hover:underline"} flex items-center gap-2`}
+        >
+          <LucideCodeXml size={16} />
+          Source
+        </a>
+        <a
+          href={project.url ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${!project.url ? "pointer-events-none opacity-50" : "hover:text-foreground transition-colors duration-150 hover:underline"} flex items-center gap-2`}
+        >
+          <LucideExternalLink size={16} />
+          Live
+        </a>
       </div>
     </motion.div>
   );
