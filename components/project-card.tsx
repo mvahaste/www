@@ -1,5 +1,5 @@
 import { Project } from "@/data/data";
-import { LucideGithub, LucideGlobe } from "lucide-react";
+import { LucideCode, LucideGlobe } from "lucide-react";
 import { Button } from "./ui/button";
 import * as motion from "motion/react-client";
 
@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             rel="noopener noreferrer"
             className={`${!project.source ? "pointer-events-none opacity-50" : ""} flex items-center gap-2`}
           >
-            <LucideGithub />
+            <LucideCode />
             Source
           </a>
         </Button>
