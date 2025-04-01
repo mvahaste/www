@@ -18,8 +18,20 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "mvahaste.dev",
-  description:
-    "Hi, I'm Mikk, a 22-year-old student at the University of Tartu, currently in my second year, mainly focusing on web development.",
+  description: "Hi, I'm Mikk 👋",
+  openGraph: {
+    type: "website",
+    url: "https://mvahaste.dev",
+    title: "mvahaste.dev",
+    description: "Hi, I'm Mikk 👋",
+    images: [
+      {
+        url: "https://mvahaste.dev/images/avatar.jpg",
+        alt: "mvahaste.dev",
+      },
+    ],
+    siteName: "mvahaste.dev",
+  },
   creator: "Mikk Vahaste",
   keywords: ["mikk", "vahaste", "web", "development", "student", "tartu"],
 };
