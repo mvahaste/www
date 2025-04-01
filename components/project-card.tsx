@@ -8,49 +8,12 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  // const projectImage = () => {
-  //   const imageProps = {
-  //     width: 500,
-  //     height: 300,
-  //     alt: "Project thumbnail",
-  //   };
-  //
-  //   const className = "aspect-[16/9] h-auto w-full object-cover";
-  //
-  //   // If both light and dark images are provided, use the appropriate one based on the theme
-  //   if (project.image?.light && project.image?.dark) {
-  //     return (
-  //       <>
-  //         <Image
-  //           className={`${className} dark:hidden`}
-  //           src={project.image.light}
-  //           {...imageProps}
-  //         />
-  //         <Image
-  //           className={`${className} hidden dark:block`}
-  //           src={project.image.dark}
-  //           {...imageProps}
-  //         />
-  //       </>
-  //     );
-  //   }
-  //
-  //   // If only one image is provided, use whichever is available
-  //   return (
-  //     <Image
-  //       className={className}
-  //       src={(project.image?.light || project.image?.dark)!}
-  //       {...imageProps}
-  //     />
-  //   );
-  // };
-
   return (
     <motion.div
       key={project.id}
-      initial={{ opacity: 0, y: 5 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
       viewport={{ once: true }}
       className="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border p-6 text-sm"
     >

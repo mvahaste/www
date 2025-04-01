@@ -6,9 +6,9 @@ import { Button } from "./ui/button";
 export default function Socials() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 5 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
       viewport={{ once: true }}
       className="mt-2 flex flex-wrap gap-2"
     >

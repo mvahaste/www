@@ -19,10 +19,10 @@ export default function SkillsList() {
           <motion.span
             key={skill.id}
             variants={{
-              hidden: { opacity: 0, y: 5 },
-              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, x: -10 },
+              visible: { opacity: 1, x: 0 },
             }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
             className="bg-card flex flex-row items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium"
           >
             <Icon />
