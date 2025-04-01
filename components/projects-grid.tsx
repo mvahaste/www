@@ -1,5 +1,4 @@
 import { Project, projects } from "@/data/data";
-import * as motion from "motion/react-client";
 import ProjectCard from "./project-card";
 
 export default function ProjectsGrid() {
