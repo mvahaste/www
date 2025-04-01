@@ -1,4 +1,4 @@
-## Hi, I'm Mikk <Wave>👋</Wave>
+## Hi, I'm Mikk <WaveEmoji />
 
 I'm a **22-year-old** student at the **University of Tartu**, currently in my second year, mainly focusing on **web development**. I've always been into computers and programming—I first started messing around with Python and quickly got hooked on web development, doing both front and back-end, with a larger focus on the former.
 
