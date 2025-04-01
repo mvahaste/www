@@ -8,6 +8,7 @@ import ProjectsGrid from "@/components/projects-grid";
 import SkillsList from "@/components/skills-list";
 
 const lora = Lora({
+  subsets: ["latin"],
   weight: "variable",
 });
 
@@ -16,6 +17,7 @@ const components = {
   Socials,
   ProjectsGrid,
   SkillsList,
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   h2: (props: any) => {
     return (
       <motion.h2
@@ -29,6 +31,7 @@ const components = {
       </motion.h2>
     );
   },
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   p: (props: any) => {
     return (
       <motion.p
@@ -42,6 +45,7 @@ const components = {
       </motion.p>
     );
   },
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   strong: (props: any) => (
     <span className="font-semibold">{props.children}</span>
   ),
