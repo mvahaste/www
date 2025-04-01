@@ -21,10 +21,11 @@ const components = {
   h2: (props: any) => {
     return (
       <motion.h2
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={{
+          hidden: { opacity: 0, x: -10 },
+          visible: { opacity: 1, x: 0 },
+        }}
         transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
-        viewport={{ once: true }}
         className={`${lora.className} mt-6 scroll-m-20 pb-2 text-2xl font-bold tracking-tight first:mt-0`}
       >
         {props.children}
@@ -35,10 +36,11 @@ const components = {
   p: (props: any) => {
     return (
       <motion.p
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={{
+          hidden: { opacity: 0, x: -10 },
+          visible: { opacity: 1, x: 0 },
+        }}
         transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
-        viewport={{ once: true }}
         className="mb-3 leading-7 last:mb-0"
       >
         {props.children}
@@ -55,8 +57,17 @@ export default async function HomePage() {
   const source = fs.readFileSync("data/content.md", "utf8");
 
   return (
-    <div>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: {
+          transition: { staggerChildren: 0.025 },
+        },
+      }}
+    >
       <MDXRemote source={source} components={components} />
-    </div>
+    </motion.div>
   );
 }

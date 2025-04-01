@@ -1,11 +1,8 @@
-import {
-  LucideGithub,
-  LucideIcon,
-  LucideLinkedin,
-  LucideMail,
-} from "lucide-react";
 import { IconType } from "react-icons";
 import {
+  SiGithub,
+  SiLinkedin,
+  SiMaildotru,
   SiNextdotjs,
   SiPostgresql,
   SiPython,
@@ -17,7 +14,7 @@ import {
 export interface Social {
   id: number;
   name: string;
-  icon: LucideIcon;
+  icon: IconType;
   url: string;
 }
 
@@ -25,19 +22,19 @@ export const socials: Social[] = [
   {
     id: 1,
     name: "Email",
-    icon: LucideMail,
+    icon: SiMaildotru,
     url: "mvahaste@proton.me",
   },
   {
     id: 2,
     name: "GitHub",
-    icon: LucideGithub,
+    icon: SiGithub,
     url: "https://github.com/mvahaste",
   },
   {
     id: 3,
     name: "LinkedIn",
-    icon: LucideLinkedin,
+    icon: SiLinkedin,
     url: "https://www.linkedin.com/in/mvahaste",
   },
 ];

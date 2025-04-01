@@ -3,13 +3,14 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { LucideCopy, LucideExternalLink, LucideMail } from "lucide-react";
+import { LucideCopy, LucideExternalLink } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { SiMaildotru } from "react-icons/si";
 
 interface EmailButtonProps {
   email: string;
@@ -39,7 +40,7 @@ export default function EmailButton({ email, className }: EmailButtonProps) {
             className,
           )}
         >
-          <LucideMail />
+          <SiMaildotru />
           Email
         </Button>
       </DropdownMenuTrigger>

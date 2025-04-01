@@ -7,7 +7,8 @@ export default function WaveEmoji() {
         rotate: [0, 20, -10, 20, -5, 0],
       }}
       transition={{
-        duration: 1.5,
+        delay: 0.1,
+        duration: 1.75,
         ease: "easeInOut",
       }}
       className="mx-1 inline-block origin-[70%_70%]"

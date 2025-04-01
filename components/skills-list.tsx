@@ -3,15 +3,7 @@ import * as motion from "motion/react-client";
 
 export default function SkillsList() {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className="mt-2 flex flex-wrap gap-2"
-      variants={{
-        visible: { transition: { staggerChildren: 0.05 } },
-      }}
-    >
+    <div className="mt-2 flex flex-wrap gap-2">
       {skills.map((skill: Skill) => {
         const Icon = skill.icon;
 
@@ -30,6 +22,6 @@ export default function SkillsList() {
           </motion.span>
         );
       })}
-    </motion.div>
+    </div>
   );
 }

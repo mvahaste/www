@@ -1,23 +1,23 @@
 ## Hi, I'm Mikk <WaveEmoji />
 
-I'm a **22-year-old** student at the **University of Tartu**, currently in my second year, mainly focusing on **web development**. I've always been into computers and programming—I first started messing around with Python and quickly got hooked on web development, doing both **front-end** and back-end, with a larger focus on the former.
+I'm a **22-year-old** informatics student at the **University of Tartu**, mainly focused on **front-end** with some back-end experience. I got into coding through Python and quickly found my way to web development.
 
-Outside of coding, I enjoy playing video games—**ELDEN RING** and **Subnautica** are probably my favorites, followed by the rest of the **Souls** games. I also listen to a lot of music, hit the gym and occasionally read when I get the chance.
+Outside of coding, I enjoy gaming—my favorites are **ELDEN RING** and **Subnautica**, followed by the rest of the **Souls** series—listening to music, going to the gym, and reading when I get the chance.
 
 ## Contact
 
-Let's get in touch, email me at **mvahaste@proton.me**!
+Want to chat? Feel free to reach out at **mvahaste@proton.me**!
 
 <Socials />
 
 ## Projects
 
-Some of my projects, unfortunately some of the source code is private.
+Here are some of my projects—while some code is private, I'm happy to share details!
 
 <ProjectsGrid />
 
 ## Skills
 
-Some of the languages I know and technologies I use.
+Languages and tools I work with:
 
 <SkillsList />
