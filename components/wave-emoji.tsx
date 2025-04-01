@@ -10,7 +10,7 @@ export default function WaveEmoji() {
         duration: 1.5,
         ease: "easeInOut",
       }}
-      className="inline-block origin-[70%_70%]"
+      className="mx-1 inline-block origin-[70%_70%]"
     >
       👋
     </motion.span>
