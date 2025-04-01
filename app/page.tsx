@@ -13,7 +13,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="mb-2 text-2xl font-bold"
+        className="mb-2 text-xl font-bold"
       >
         Hi, I{"'"}m Mikk{" "}
         <motion.span
@@ -45,11 +45,11 @@ export default function Home() {
         <br />
         <br />
         Outside of coding, I enjoy playing video games—
-        <span className="font-medium">Elden Ring</span> and{" "}
+        <span className="font-medium">ELDEN RING</span> and{" "}
         <span className="font-medium">Subnautica</span> are probably my
-        favorites, and I love the <span className="font-medium">Souls</span>{" "}
-        series in general. I also listen to a lot of music, hit the gym and
-        occasionally read when I get the chance.
+        favorites, followed by the rest of the{" "}
+        <span className="font-medium">Souls</span> games. I also listen to a lot
+        of music, hit the gym and occasionally read when I get the chance.
       </motion.p>
       {/* Contact */}
       <motion.h2
@@ -57,7 +57,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="mt-8 mb-2 text-2xl font-bold"
+        className="mt-8 mb-2 text-xl font-bold"
       >
         Contact 📫
       </motion.h2>
@@ -105,7 +105,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="mt-8 text-2xl font-bold"
+        className="mt-8 text-xl font-bold"
       >
         Projects 🚀
       </motion.h2>
@@ -134,7 +134,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="mt-8 text-2xl font-bold"
+        className="mt-8 text-xl font-bold"
       >
         Skills 🎨
       </motion.h2>

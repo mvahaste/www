@@ -1,6 +1,4 @@
-# 👋 Porfolio
-
-My simple little portfolio website.
+# 🌐 Personal Website
 
 ## ⚙️ Technologies
 
