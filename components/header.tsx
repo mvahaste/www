@@ -8,7 +8,9 @@ export default function Header() {
         <div className="flex flex-row items-center gap-3">
           <Avatar>
             <AvatarImage src="images/avatar.jpg" alt="mvahaste avatar image" />
-            <AvatarFallback className="text-xs">MV</AvatarFallback>
+            <AvatarFallback className="bg-card text-card-foreground text-2xl">
+              ☕
+            </AvatarFallback>
           </Avatar>
           <h1 className="font-bold">mvahaste</h1>
         </div>
