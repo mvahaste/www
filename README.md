@@ -6,4 +6,5 @@
 - [shadcn/ui](https://ui.shadcn.com/) for base UI components
 - [TailwindCSS](https://tailwindcss.com/) for styling
 - [Motion](https://motion.dev/) for animations
+- [Next MDX Remote](https://github.com/hashicorp/next-mdx-remote) to load and render MDX content
 - [Vercel](https://vercel.com/) for the hosting
