@@ -59,7 +59,7 @@ export default function Home() {
         viewport={{ once: true }}
         className="mt-8 mb-2 text-xl font-bold"
       >
-        Contact 📫
+        Contact
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 5 }}
@@ -107,7 +107,7 @@ export default function Home() {
         viewport={{ once: true }}
         className="mt-8 text-xl font-bold"
       >
-        Projects 🚀
+        Projects
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 5 }}
@@ -136,7 +136,7 @@ export default function Home() {
         viewport={{ once: true }}
         className="mt-8 text-xl font-bold"
       >
-        Skills 🎨
+        Skills
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 5 }}
