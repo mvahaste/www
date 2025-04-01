@@ -1,6 +1,5 @@
 import { Project } from "@/data/data";
 import { LucideGithub, LucideGlobe } from "lucide-react";
-import Image from "next/image";
 import { Button } from "./ui/button";
 import * as motion from "motion/react-client";
 
@@ -9,42 +8,42 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const projectImage = () => {
-    const imageProps = {
-      width: 500,
-      height: 300,
-      alt: "Project thumbnail",
-    };
-
-    const className = "aspect-[16/9] h-auto w-full object-cover";
-
-    // If both light and dark images are provided, use the appropriate one based on the theme
-    if (project.image?.light && project.image?.dark) {
-      return (
-        <>
-          <Image
-            className={`${className} dark:hidden`}
-            src={project.image.light}
-            {...imageProps}
-          />
-          <Image
-            className={`${className} hidden dark:block`}
-            src={project.image.dark}
-            {...imageProps}
-          />
-        </>
-      );
-    }
-
-    // If only one image is provided, use whichever is available
-    return (
-      <Image
-        className={className}
-        src={(project.image?.light || project.image?.dark)!}
-        {...imageProps}
-      />
-    );
-  };
+  // const projectImage = () => {
+  //   const imageProps = {
+  //     width: 500,
+  //     height: 300,
+  //     alt: "Project thumbnail",
+  //   };
+  //
+  //   const className = "aspect-[16/9] h-auto w-full object-cover";
+  //
+  //   // If both light and dark images are provided, use the appropriate one based on the theme
+  //   if (project.image?.light && project.image?.dark) {
+  //     return (
+  //       <>
+  //         <Image
+  //           className={`${className} dark:hidden`}
+  //           src={project.image.light}
+  //           {...imageProps}
+  //         />
+  //         <Image
+  //           className={`${className} hidden dark:block`}
+  //           src={project.image.dark}
+  //           {...imageProps}
+  //         />
+  //       </>
+  //     );
+  //   }
+  //
+  //   // If only one image is provided, use whichever is available
+  //   return (
+  //     <Image
+  //       className={className}
+  //       src={(project.image?.light || project.image?.dark)!}
+  //       {...imageProps}
+  //     />
+  //   );
+  // };
 
   return (
     <motion.div
