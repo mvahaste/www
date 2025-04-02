@@ -4,12 +4,12 @@ import {
   SiLinkedin,
   SiMaildotru,
   SiNextdotjs,
-  SiPostgresql,
   SiPython,
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 export interface Social {
   id: number;
@@ -74,7 +74,7 @@ export const skills: Skill[] = [
   {
     id: 6,
     name: "PostgreSQL",
-    icon: SiPostgresql,
+    icon: BiLogoPostgresql,
   },
 ];
 
