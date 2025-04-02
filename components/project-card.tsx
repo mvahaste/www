@@ -31,14 +31,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.stack.map((s: string) => (
             <span
               key={s}
-              className="bg-muted dark:bg-muted/25 text-muted-foreground rounded-full px-2.5 py-1 text-xs font-semibold"
+              className="bg-muted text-muted-foreground rounded-full px-2.5 py-1 text-xs font-semibold"
             >
               {s}
             </span>
           ))}
         </div>
       </div>
-      <div className="bg-muted dark:bg-muted/25 text-muted-foreground mt-3 flex justify-between gap-4 border-t px-6 py-4 font-medium">
+      <div className="bg-muted text-muted-foreground mt-3 flex justify-between gap-4 border-t px-6 py-4 font-medium">
         <a
           href={project.source ?? "#"}
           target="_blank"
