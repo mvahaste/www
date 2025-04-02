@@ -6,6 +6,7 @@ import { Lora } from "next/font/google";
 import Socials from "@/components/socials";
 import ProjectsGrid from "@/components/projects-grid";
 import SkillsList from "@/components/skills-list";
+import ContactForm from "@/components/contact-form";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -14,6 +15,7 @@ const lora = Lora({
 
 const components = {
   WaveEmoji,
+  ContactForm,
   Socials,
   ProjectsGrid,
   SkillsList,
