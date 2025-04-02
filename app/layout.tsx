@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "@/components/ui/sonner";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -59,6 +60,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </main>
+          <Toaster />
         </ThemeProvider>
         <SpeedInsights />
       </body>

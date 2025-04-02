@@ -63,7 +63,7 @@ export default async function HomePage() {
       viewport={{ once: true }}
       variants={{
         visible: {
-          transition: { staggerChildren: 0.025 },
+          transition: { staggerChildren: 0.01 },
         },
       }}
     >

@@ -6,7 +6,7 @@ Outside of coding, I enjoy gaming—my favorites are **ELDEN RING** and **Subnau
 
 ## Contact
 
-Want to chat? Feel free to reach out at **mvahaste@proton.me**!
+Want to chat? Reach out to me at **mvahaste@proton.me**!
 
 <Socials />
 
