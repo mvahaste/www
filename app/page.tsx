@@ -6,7 +6,6 @@ import { Lora } from "next/font/google";
 import Socials from "@/components/socials";
 import ProjectsGrid from "@/components/projects-grid";
 import SkillsList from "@/components/skills-list";
-import ContactForm from "@/components/contact-form";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -15,7 +14,6 @@ const lora = Lora({
 
 const components = {
   WaveEmoji,
-  ContactForm,
   Socials,
   ProjectsGrid,
   SkillsList,
@@ -65,7 +63,7 @@ export default async function HomePage() {
       viewport={{ once: true }}
       variants={{
         visible: {
-          transition: { staggerChildren: 0.025 },
+          transition: { staggerChildren: 0.01 },
         },
       }}
     >
