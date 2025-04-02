@@ -21,6 +21,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { LucideLoader, LucideLoaderCircle } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -39,6 +41,8 @@ export default function ContactForm({
   isOpen,
   setIsOpenAction,
 }: ContactFormProps) {
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,8 +52,29 @@ export default function ContactForm({
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+
+    setIsLoading(true);
+
+    const response = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      // toast
+      setIsLoading(false);
+      return;
+    }
+
+    form.reset();
+    setIsLoading(false);
+    setIsOpenAction(false);
+    // toast
   }
 
   return (
@@ -73,7 +98,12 @@ export default function ContactForm({
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input type="text" placeholder="Your name" {...field} />
+                    <Input
+                      type="text"
+                      placeholder="Your name"
+                      disabled={isLoading}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -86,7 +116,12 @@ export default function ContactForm({
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="Your email" {...field} />
+                    <Input
+                      type="email"
+                      placeholder="Your email"
+                      disabled={isLoading}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,14 +134,27 @@ export default function ContactForm({
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Your message" rows={3} {...field} />
+                    <Textarea
+                      placeholder="Your message"
+                      rows={3}
+                      disabled={isLoading}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="hover:cursor-pointer">
-              Submit
+            <Button
+              type="submit"
+              className="hover:cursor-pointer"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <LucideLoaderCircle className="animate-spin" />
+              ) : (
+                "Submit"
+              )}
             </Button>
           </form>
         </Form>
