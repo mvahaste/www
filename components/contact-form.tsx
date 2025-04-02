@@ -21,8 +21,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { LucideLoader, LucideLoaderCircle } from "lucide-react";
+import { LucideLoaderCircle } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -66,7 +67,7 @@ export default function ContactForm({
     });
 
     if (!response.ok) {
-      // toast
+      toast.error("Something went wrong, please try again later.");
       setIsLoading(false);
       return;
     }
@@ -74,7 +75,9 @@ export default function ContactForm({
     form.reset();
     setIsLoading(false);
     setIsOpenAction(false);
-    // toast
+    toast.success(
+      "Message sent successfully! I'll get back to you as soon as I can.",
+    );
   }
 
   return (
