@@ -21,7 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { LucideLoaderCircle } from "lucide-react";
+import { LucideLoader } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -153,11 +153,7 @@ export default function ContactForm({
               className="hover:cursor-pointer"
               disabled={isLoading}
             >
-              {isLoading ? (
-                <LucideLoaderCircle className="animate-spin" />
-              ) : (
-                "Submit"
-              )}
+              {isLoading ? <LucideLoader className="animate-spin" /> : "Submit"}
             </Button>
           </form>
         </Form>
