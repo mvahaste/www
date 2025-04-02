@@ -5,7 +5,7 @@ export default function Footer() {
         View the source code on{" "}
         <a
           className="text-foreground font-semibold hover:underline"
-          href="https://github.com/mvahaste/portfolio"
+          href="https://github.com/mvahaste/www"
           target="_blank"
           rel="noopener noreferrer"
         >
