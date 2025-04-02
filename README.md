@@ -2,14 +2,6 @@
 
 This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features animations for an engaging user experience.
 
-## 🗺️ Table of Contents
-
-- [✨ Features](#✨-features)
-- [🧰 Technologies](#🧰-technologies)
-- [⚙️ Installation](#⚙️-installation)
-- [💻 Screenshots](#💻-screenshots)
-- [📜 License](#📜-license)
-
 ## ✨ Features
 
 - **Responsive Layout** - The website adapts to different screen sizes.
