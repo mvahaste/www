@@ -56,7 +56,9 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col items-center">
             <div className="flex w-full flex-1 flex-col items-center">
               <Header />
-              <div className="w-full max-w-3xl flex-grow p-4">{children}</div>
+              <div className="flex w-full max-w-3xl flex-grow flex-col p-4">
+                {children}
+              </div>
             </div>
             <Footer />
           </main>
