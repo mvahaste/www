@@ -11,12 +11,12 @@ const links = [
 ];
 
 export default function HeaderNav() {
+  const pathname = usePathname();
+
   // Don't show the nav if there's nothing to navigate to
   if (links.length < 2) {
     return null;
   }
-
-  const pathname = usePathname();
 
   return (
     <nav className="flex flex-row items-center gap-4 text-sm">
