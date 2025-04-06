@@ -7,7 +7,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Responsive Layout** - The website adapts to different screen sizes.
 - **Clean Design** - Simple, elegant design with a cream/coffee pastel color theme. ☕
 - **Animations** - Staggered fade and slide-in animations on page load, as well as a wave. 👋
-- **Dark/Light Mode** - A pleasant color scheme with light and dark mode options. 
+- **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
 - **Contact Form** - Reach out through the contact form.
 
 ## 🧰 Technologies
