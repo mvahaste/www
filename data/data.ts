@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { BiLogoPostgresql } from "react-icons/bi";
 import {
   SiGithub,
   SiLinkedin,
@@ -9,7 +10,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
 
 export interface Social {
   id: number;

@@ -1,17 +1,17 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import { useState } from "react";
 import { LucideCopy, LucideExternalLink, LucideMailOpen } from "lucide-react";
+import { useState } from "react";
+import { SiMaildotru } from "react-icons/si";
+import ContactForm from "./contact-form";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { SiMaildotru } from "react-icons/si";
-import ContactForm from "./contact-form";
 
 interface EmailButtonProps {
   email: string;

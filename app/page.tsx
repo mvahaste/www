@@ -1,11 +1,11 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import * as motion from "motion/react-client";
-import fs from "fs";
-import WaveEmoji from "@/components/wave-emoji";
-import { Lora } from "next/font/google";
-import Socials from "@/components/socials";
 import ProjectsGrid from "@/components/projects-grid";
 import SkillsList from "@/components/skills-list";
+import Socials from "@/components/socials";
+import WaveEmoji from "@/components/wave-emoji";
+import fs from "fs";
+import * as motion from "motion/react-client";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { Lora } from "next/font/google";
 
 const lora = Lora({
   subsets: ["latin"],

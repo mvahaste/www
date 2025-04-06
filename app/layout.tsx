@@ -1,11 +1,11 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import { ThemeProvider } from "next-themes";
-import Footer from "@/components/footer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Toaster } from "@/components/ui/sonner";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
