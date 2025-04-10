@@ -7,14 +7,9 @@ async function captureScreenshots(deploymentUrl) {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
-    args: ["--no-sandbox"],
   });
 
   const page = await browser.newPage();
-
-  await page.setUserAgent(
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
-  );
 
   /**
    * Capture a screenshot of the page with the specified theme.
@@ -40,21 +35,22 @@ async function captureScreenshots(deploymentUrl) {
 
     // Set the viewport width to match the header's width
     if (headerWidth) {
-      await page.setViewport({ width: headerWidth, height: 800 }); // Adjust height if needed
+      await page.setViewport({
+        width: headerWidth,
+        height: 800,
+        deviceScaleFactor: 3,
+      });
     }
 
-    // Take screenshot
     await page.screenshot({ path: `screenshot-${theme}.png`, fullPage: true });
   }
 
-  // Capture screenshots for both light and dark themes
   await captureScreenshot("light");
   await captureScreenshot("dark");
 
   await browser.close();
 }
 
-// Get deployment URL passed as an argument
 const deploymentUrl = process.argv[2];
 
 captureScreenshots(deploymentUrl);
