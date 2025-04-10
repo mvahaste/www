@@ -1,4 +1,4 @@
-name: Update Favicon from Avatar
+name: Update Favicon
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
           git config user.email "github-actions@github.com"
           if [[ `git status --porcelain` ]]; then
             git add app/favicon.ico public/images/avatar.png .avatar_hash
-            git commit -m "Update favicon and avatar from GitHub profile"
+            git commit -m "Update favicon and header image from GitHub avatar"
             git push
           else
             echo "No changes to commit."

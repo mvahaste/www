@@ -23,7 +23,7 @@ jobs:
 
       - name: Run screenshot script
         run: |
-          node scripts/take_screenshot.js $DEPLOYMENT_URL
+          node scripts/take_screenshots.js $DEPLOYMENT_URL
 
       - name: Commit and push updated screenshots
         run: |
