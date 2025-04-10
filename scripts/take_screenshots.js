@@ -7,6 +7,7 @@ async function captureScreenshots(deploymentUrl) {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
+    args: ["--no-sandbox"],
   });
 
   const page = await browser.newPage();
