@@ -4,7 +4,12 @@ from PIL import Image
 from io import BytesIO
 import os
 
-USERNAME = "mvahaste"
+USERNAME = os.getenv("GITHUB_REPOSITORY_OWNER")
+
+if not USERNAME:
+    print("Error: GITHUB_REPOSITORY_OWNER not set.")
+    exit(1)
+
 AVATAR_URL = f"https://github.com/{USERNAME}.png"
 HASH_FILE = ".avatar_hash"
 FAVICON_PATH = "app/favicon.ico"
@@ -37,4 +42,4 @@ img.save(AVATAR_PNG_PATH, format="PNG")
 with open(HASH_FILE, "w") as f:
     f.write(avatar_hash)
 
-print("Avatar updated: favicon and avatar.png replaced.")
+print("Avatar updated: app/favicon.ico and public/images/avatar.png replaced.")

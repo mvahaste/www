@@ -9,6 +9,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Animations** - Staggered fade and slide-in animations on page load, as well as a wave. 👋
 - **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
 - **Contact Form** - Reach out through the contact form.
+- **Automatic Favicon Update** - Website favicon updated automatically alongside my GitHub avatar.
 
 ## 🧰 Technologies
 
@@ -19,6 +20,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - Render page content from `.md` files
 - [form-to-email](https://www.form-to-email.com/) - To send emails via the contact form
 - [Vercel](https://vercel.com/) - Hosting platform
+- [GitHub Actions](https://github.com/features/actions) - Automatically check the GitHub avatar and update if changed
 
 ## ⚙️ Installation
 
@@ -60,6 +62,14 @@ To run this project locally, follow these steps:
      ```bash
      npm run start
      ```
+
+## 🤖 GitHub Actions
+
+I use my GitHub avatar as the website's favicon and as an image in the header. To keep them in sync, I have a GitHub Action that runs every 12 hours.
+
+The action compares the stored avatar hash from `.avatar_hash` against the image at `https://github.com/$GITHUB_REPOSITORY_OWNER.png`. If the hash is different, it updates the `.avatar_hash`, `app/favicon.ico`, and `public/images/avatar.png` files and commits the changes.
+
+I could also only update the favicon and leave the header image as a remote image, like I did previously, but they will be out of sync due to `next/image` caching.
 
 ## 💻 Screenshots
 
