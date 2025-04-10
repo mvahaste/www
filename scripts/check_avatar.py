@@ -8,6 +8,7 @@ USERNAME = "mvahaste"
 AVATAR_URL = f"https://github.com/{USERNAME}.png"
 HASH_FILE = ".avatar_hash"
 FAVICON_PATH = "app/favicon.ico"
+AVATAR_PNG_PATH = "public/images/avatar.png"
 
 # Fetch avatar
 response = requests.get(AVATAR_URL)
@@ -29,8 +30,11 @@ if os.path.exists(HASH_FILE):
 img = Image.open(BytesIO(avatar_bytes)).convert("RGBA")
 img.save(FAVICON_PATH, format="ICO")
 
+# Also save the PNG directly
+img.save(AVATAR_PNG_PATH, format="PNG")
+
 # Save new hash
 with open(HASH_FILE, "w") as f:
     f.write(avatar_hash)
 
-print("Avatar updated and favicon replaced.")
+print("Avatar updated: favicon and avatar.png replaced.")

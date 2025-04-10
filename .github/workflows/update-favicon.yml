@@ -1,9 +1,12 @@
 name: Update Favicon from Avatar
 
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron: '0 */12 * * *'  # every 12 hours
-  workflow_dispatch:        # allow manual run too
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
 
 jobs:
   update-favicon:
@@ -29,11 +32,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           if [[ `git status --porcelain` ]]; then
-            git add app/favicon.ico .avatar_hash
-            git commit -m "Update favicon from new GitHub avatar"
+            git add app/favicon.ico public/images/avatar.png .avatar_hash
+            git commit -m "Update favicon and avatar from GitHub profile"
             git push
           else
             echo "No changes to commit."
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
