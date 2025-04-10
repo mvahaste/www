@@ -9,6 +9,8 @@ USERNAME = os.getenv("GITHUB_REPOSITORY_OWNER")
 if not USERNAME:
     print("Error: GITHUB_REPOSITORY_OWNER not set.")
     exit(1)
+else:
+    print(f"Using GitHub username: {USERNAME}")
 
 AVATAR_URL = f"https://github.com/{USERNAME}.png"
 HASH_FILE = ".avatar_hash"
@@ -30,6 +32,8 @@ if os.path.exists(HASH_FILE):
     if avatar_hash == old_hash:
         print("Avatar hasn't changed.")
         exit(0)
+    else:
+        print("Avatar has changed.")
 
 # Convert to .ico
 img = Image.open(BytesIO(avatar_bytes)).convert("RGBA")

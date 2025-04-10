@@ -1,6 +1,6 @@
 # ☕ mvahaste.dev
 
-This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features animations for an engaging user experience.
+This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features simple animations for a bit of character.
 
 ## ✨ Features
 
@@ -9,7 +9,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Animations** - Staggered fade and slide-in animations on page load, as well as a wave. 👋
 - **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
 - **Contact Form** - Reach out through the contact form.
-- **Automatic Favicon Update** - Website favicon updated automatically alongside my GitHub avatar.
+- **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
 
 ## 🧰 Technologies
 
@@ -65,11 +65,25 @@ To run this project locally, follow these steps:
 
 ## 🤖 GitHub Actions
 
-I use my GitHub avatar as the website's favicon and as an image in the header. To keep them in sync, I have a GitHub Action that runs every 12 hours.
+This repository includes a GitHub Action that automatically updates the favicon and header image based on my GitHub avatar.
 
-The action compares the stored avatar hash from `.avatar_hash` against the image at `https://github.com/$GITHUB_REPOSITORY_OWNER.png`. If the hash is different, it updates the `.avatar_hash`, `app/favicon.ico`, and `public/images/avatar.png` files and commits the changes.
+### 🤔 How It Works
 
-I could also only update the favicon and leave the header image as a remote image, like I did previously, but they will be out of sync due to `next/image` caching.
+1. **Runs every hour** via cron (`0 * * * *`), or manually triggered.
+2. Fetches and compares the avatar with the stored hash.
+3. If the avatar has changed, it updates the following files:
+   - `.avatar_hash` – stores the avatar hash.
+   - `app/favicon.ico` – favicon.
+   - `public/images/avatar.png` – header image.
+4. Commits and pushes the changes automatically.
+
+### 🗃️ Related Files
+
+- **Action**: `.github/workflows/update-favicon.yml`
+- **Script**: `scripts/check_avatar.py`
+- **Cache**: `.avatar_hash`
+
+This ensures the site's visuals stay synced with my GitHub profile.
 
 ## 💻 Screenshots
 
