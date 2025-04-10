@@ -10,6 +10,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
 - **Contact Form** - Reach out through the contact form.
 - **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
+- **Automated Screenshot Updates** - Screenshots of the site in both light and dark mode are automatically updated in the README.
 
 ## 🧰 Technologies
 
@@ -20,7 +21,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - Render page content from `.md` files
 - [form-to-email](https://www.form-to-email.com/) - To send emails via the contact form
 - [Vercel](https://vercel.com/) - Hosting platform
-- [GitHub Actions](https://github.com/features/actions) - Automatically check the GitHub avatar and update if changed
+- [GitHub Actions](https://github.com/features/actions) - Automate tasks like updating the favicon, header image, and screenshots
 
 ## ⚙️ Installation
 
@@ -65,25 +66,51 @@ To run this project locally, follow these steps:
 
 ## 🤖 GitHub Actions
 
-This repository includes a GitHub Action that automatically updates the favicon and header image based on my GitHub avatar.
+This repository includes two GitHub Actions that automate the process of updating the favicon and screenshots based on the current state of my GitHub profile.
 
-### 🤔 How It Works
+### 🖼️ Automatic Favicon Update
 
-1. **Runs every hour** via cron (`0 * * * *`), or manually triggered.
-2. Fetches and compares the avatar with the stored hash.
-3. If the avatar has changed, it updates the following files:
-   - `.avatar_hash` – stores the avatar hash.
-   - `app/favicon.ico` – favicon.
-   - `public/images/avatar.png` – header image.
-4. Commits and pushes the changes automatically.
+This action keeps the site's favicon and header image in sync with my GitHub profile picture.
 
-### 🗃️ Related Files
+#### 🤔 How It Works
+
+1. **Runs every hour** via a scheduled cron job (`0 * * * *`), or can be triggered manually.
+2. Fetches the latest avatar from my GitHub profile.
+3. Compares the new avatar with the stored hash to detect changes.
+4. If the avatar has changed, the following files are updated:
+   - `.avatar_hash` – stores the hash of the current avatar.
+   - `app/favicon.ico` – used for the site's favicon.
+   - `public/images/avatar.png` – used for the site's header image.
+5. Commits and pushes the changes automatically.
+
+#### 🗃️ Related Files
 
 - **Action**: `.github/workflows/update-favicon.yml`
 - **Script**: `scripts/check_avatar.py`
 - **Cache**: `.avatar_hash`
 
 This ensures the site's visuals stay synced with my GitHub profile.
+
+### 📸 Automated Screenshot Updates
+
+This action automatically captures full-page screenshots of the site in both light and dark mode. It should be triggered automatically after every successful deployment, but for now it's set to manual only to avoid loops.
+
+#### 🤔 How It Works
+
+1. **Triggered after every successful Vercel deployment**, or manually (currently manual only).
+2. Runs a script that:
+   - Sets the site's theme (light or dark) via local storage.
+   - Waits for page load and animations to complete.
+   - Captures a screenshot of the page in the selected theme.
+3. Saves the screenshots as `screenshot-light.png` and `screenshot-dark.png`.
+4. Commits and pushes the changes automatically.
+
+#### 🗃️ Related Files
+
+- **Action**: `.github/workflows/update-screenshots.yml`
+- **Script**: `scripts/take_screenshot.js`
+
+This ensures that the latest visual state of the site is reflected in the README with up-to-date screenshots in both themes.
 
 ## 💻 Screenshots
 
