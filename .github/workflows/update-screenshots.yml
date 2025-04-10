@@ -33,19 +33,18 @@ jobs:
         run: |
           npm install puppeteer
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          install-chromedriver: true
-
       - name: Take screenshots
         run: |
           node scripts/take_screenshots.js $DEPLOYMENT_URL
 
-      - name: Commit and push updated screenshots
+      - name: Commit and push if screenshots changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add screenshot-light.png screenshot-dark.png
-          git commit -m "Update screenshots"
-          git push
+          if [[ `git status --porcelain` ]]; then
+            git add public/screenshots/*.png
+            git commit -m "Update screenshots"
+            git push
+          else
+            echo "No changes to commit."
+          fi
