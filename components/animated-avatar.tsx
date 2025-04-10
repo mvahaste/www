@@ -19,7 +19,7 @@ export default function AnimatedAvatar() {
       className="origin-center"
     >
       <Image
-        src="/public/images/avatar.png"
+        src="/images/avatar.png"
         alt="Avatar"
         width={32}
         height={32}
