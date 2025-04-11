@@ -8,9 +8,7 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-3xl flex-row items-center justify-between p-4">
         <div className="flex flex-row items-center gap-3">
           <AnimatedAvatar />
-          <h1 className="font-bold">
-            mvahaste (testing build and screenshots)
-          </h1>
+          <h1 className="font-bold">mvahaste</h1>
         </div>
         <div className="flex flex-row items-center gap-4">
           <HeaderNav />
