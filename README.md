@@ -95,15 +95,19 @@ This repository includes a GitHub Actions that automatically updates the screens
 
 #### 🤔 How It Works
 
-1. **Runs on every successful deployment** to Vercel.
+1. **Runs on every successful deployment** to Vercel, or when manually triggered.
 2. Uses `puppeteer` to take screenshots of the website in both light and dark modes.
 3. Saves the screenshots as `screenshot-light.png` and `screenshot-dark.png`.
 4. If the screenshots have changed, it commits and pushes the changes to the repository.
 
+In order to stop an infinite loop of deployments and pushes, I've created a script that checks if there are any changes in the app before building on Vercel. It ignores files/directories, that don't affect the app.
+
 ### 🗃️ Related Files
 
 - **Action**: `.github/workflows/update-screenshots.yml`
-- **Script**: `scripts/update_screenshots.py`
+- **Scripts**:
+  - `scripts/update_screenshots.js`
+  - `scripts/build_check.sh`
 
 This ensures the README file always has up-to-date screenshots of the website.
 
