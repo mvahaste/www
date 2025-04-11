@@ -15,6 +15,10 @@ jobs:
 
       - name: Get deployment URL from GitHub API
         run: |
+          if [ -z "$GITHUB_REPOSITORY" ]; then
+            echo "GITHUB_REPOSITORY is not set. Exiting."
+            exit 1
+          fi
           REPO_INFO=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY)
           DEPLOYMENT_URL=$(echo $REPO_INFO | jq -r .homepage)
           if [ "$DEPLOYMENT_URL" == "null" ]; then
