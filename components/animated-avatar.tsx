@@ -16,7 +16,7 @@ export default function AnimatedAvatar() {
       style={{
         rotate,
       }}
-      className="origin-center"
+      className="origin-center text-xs"
     >
       <Image
         src="/images/avatar.png"
