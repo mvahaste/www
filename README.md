@@ -25,9 +25,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 
 ## ⚙️ Installation
 
-_I don't know why anyone would want to do this, but I'll include it anyway._
-
-To run this project locally, follow these steps:
+You probably don't need to do this — but just in case, here's how to run the project locally:
 
 1. Clone the repository:
    ```bash
@@ -48,7 +46,7 @@ To run this project locally, follow these steps:
    FORM_ENDPOINT=<form-to-email endpoint>
    ```
 
-5. For development:
+5. Start the development server:
 
    ```bash
    npm run dev
@@ -59,7 +57,7 @@ To run this project locally, follow these steps:
      ```bash
      npm run build
      ```
-   - Run the project:
+   - Run the production server:
      ```bash
      npm run start
      ```
@@ -68,50 +66,58 @@ To run this project locally, follow these steps:
 
 ### 🔄 Automatic Favicon and Header Image Updates
 
-This repository includes a GitHub Actions that automatically updates the favicon and header image based on my GitHub avatar.
+This repository includes a GitHub Actions workflow that keeps the site's favicon and header image in sync with my GitHub avatar.
 
-#### 🤔 How It Works
+#### 🛠️ How It Works
 
-1. **Runs every hour** via a scheduled cron job (`0 * * * *`), or can be triggered manually.
-2. Fetches the latest avatar from my GitHub profile.
-3. Compares the new avatar with the stored hash to detect changes.
-4. If the avatar has changed, the following files are updated:
+1. **Runs hourly** via a scheduled cron job (`0 * * * *`) or can be triggered manually.
+2. Retrieves the latest avatar from my GitHub profile.
+3. Compares the fetched avatar with a stored hash to detect changes.
+4. If a change is detected, it updates the following files:
    - `.avatar_hash` – stores the hash of the current avatar.
-   - `app/favicon.ico` – used for the site's favicon.
-   - `public/images/avatar.png` – used for the site's header image.
-5. Commits and pushes the changes automatically.
+   - `app/favicon.ico` – used as the site’s favicon.
+   - `public/images/avatar.png` – used as the header image.
+5. Automatically commits and pushes the updated files.
 
-#### 🗃️ Related Files
+> The GitHub username is sourced from a default environment variable — no hardcoding involved.
 
-- **Action**: `.github/workflows/update-favicon.yml`
+#### 🗃️ Relevant Files
+
+- **Workflow**: `.github/workflows/update-favicon.yml`
 - **Script**: `scripts/check_avatar.py`
-- **Cache**: `.avatar_hash`
+- **Cache File**: `.avatar_hash`
 
-This ensures the site's favicon and header image are always up-to-date with my GitHub avatar.
+This ensures the site's visuals remain current with my GitHub profile.
 
 ### 🔄 Automatic Screenshot Updates
 
-This repository includes a GitHub Actions that automatically updates the screenshots in the README file after a successful deployment to Vercel.
+This repository also includes a GitHub Actions workflow that updates website screenshots in the README after each successful Vercel deployment.
 
-#### 🤔 How It Works
+#### 🛠️ How It Works
 
-1. **Runs on every successful deployment** to Vercel, or when manually triggered.
-2. Uses `puppeteer` to take screenshots of the website in both light and dark modes.
-3. Saves the screenshots as `screenshot-light.png` and `screenshot-dark.png`.
-4. If the screenshots have changed, it commits and pushes the changes to the repository.
+1. **Triggered on every successful deployment** to Vercel or can be run manually.
+2. Uses `puppeteer` to capture screenshots of the site in both light and dark modes.
+3. Saves the screenshots as:
+   - `screenshot-light.png`
+   - `screenshot-dark.png`
+4. If any changes are detected, the updated screenshots are committed and pushed automatically.
 
-In order to stop an infinite loop of deployments and pushes, I've created a script that checks if there are any changes in the app before building on Vercel. It ignores files/directories, that don't affect the app.
+To prevent an infinite loop of deployments and commits, a custom script checks for meaningful changes in the application before proceeding with a build. It ignores files and directories that don't impact the deployed app.
 
-### 🗃️ Related Files
+> The repository name, API URL, and access token are all pulled from default environment variables — no hardcoding.
 
-- **Action**: `.github/workflows/update-screenshots.yml`
+#### 🗃️ Relevant Files
+
+- **Workflow**: `.github/workflows/update-screenshots.yml`
 - **Scripts**:
   - `scripts/update_screenshots.js`
   - `scripts/build_check.sh`
 
-This ensures the README file always has up-to-date screenshots of the website.
+This ensures the README always reflects the latest visual state of the website.
 
 ## 💻 Screenshots
+
+This is how the website looks in both light and dark modes.
 
 | Light Mode                                     | Dark Mode                                    |
 | ---------------------------------------------- | -------------------------------------------- |
