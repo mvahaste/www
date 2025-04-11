@@ -26,7 +26,7 @@ const components = {
           visible: { opacity: 1, x: 0 },
         }}
         transition={{ duration: 0.5, ease: "easeInOut", type: "spring" }}
-        className={`${lora.className} scroll-m-20 mt-7 pb-2 text-2xl font-bold tracking-tight first:mt-0`}
+        className={`${lora.className} mt-7 scroll-m-20 pb-2 text-2xl font-bold tracking-tight first:mt-0`}
       >
         {props.children}
       </motion.h2>
