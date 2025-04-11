@@ -20,6 +20,10 @@ jobs:
             exit 1
           fi
           REPO_INFO=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY)
+          if [ $? -ne 0 ]; then
+            echo "Failed to fetch repository information."
+            exit 1
+          fi
           DEPLOYMENT_URL=$(echo $REPO_INFO | jq -r .homepage)
           if [ "$DEPLOYMENT_URL" == "null" ]; then
             echo "No homepage URL found in repository."
