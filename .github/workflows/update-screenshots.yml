@@ -2,9 +2,8 @@ name: Update Screenshots
 
 on:
   workflow_dispatch:
-  # This will cause infinite loops, commenting out for now.
-  # deployment_status:
-  #   types: [success]
+  deployment_status:
+    state: success
 
 jobs:
   update-screenshots:
