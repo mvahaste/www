@@ -1,0 +1,54 @@
+name: Update Screenshots
+
+on:
+  workflow_dispatch:
+  # This will cause infinite loops, commenting out for now.
+  # deployment_status:
+  #   types: [success]
+
+jobs:
+  update-screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get deployment URL from GitHub API
+        run: |
+          REPO_INFO=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY)
+          DEPLOYMENT_URL=$(echo $REPO_INFO | jq -r .homepage)
+          if [ "$DEPLOYMENT_URL" == "null" ]; then
+            echo "No homepage URL found in repository."
+            exit 1
+          fi
+          echo "Deployment URL: $DEPLOYMENT_URL"
+          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+
+      - name: Install dependencies
+        run: |
+          npm install puppeteer
+
+      - name: Take screenshots
+        run: |
+          node scripts/take_screenshots.js $DEPLOYMENT_URL
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: |
+            screenshot-light.png
+            screenshot-dark.png
+
+      # - name: Commit and push updated screenshots
+      #   run: |
+      #     git config user.name "github-actions"
+      #     git config user.email "github-actions@github.com"
+      #     git add screenshot-light.png screenshot-dark.png
+      #     git commit -m "Update screenshots"
+      #     git push
