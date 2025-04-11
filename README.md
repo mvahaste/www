@@ -10,6 +10,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
 - **Contact Form** - Reach out through the contact form.
 - **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
+- **Automatic Screenshot Updates** - README screenshots updated automatically on successful deployment.
 
 ## 🧰 Technologies
 
@@ -20,7 +21,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - Render page content from `.md` files
 - [form-to-email](https://www.form-to-email.com/) - To send emails via the contact form
 - [Vercel](https://vercel.com/) - Hosting platform
-- [GitHub Actions](https://github.com/features/actions) - Automate favicon and header image updates
+- [GitHub Actions](https://github.com/features/actions) - Automate favicon, header image, and screenshot updates
 
 ## ⚙️ Installation
 
@@ -65,9 +66,11 @@ To run this project locally, follow these steps:
 
 ## 🤖 GitHub Actions
 
+### 🔄 Automatic Favicon and Header Image Updates
+
 This repository includes a GitHub Actions that automatically updates the favicon and header image based on my GitHub avatar.
 
-### 🤔 How It Works
+#### 🤔 How It Works
 
 1. **Runs every hour** via a scheduled cron job (`0 * * * *`), or can be triggered manually.
 2. Fetches the latest avatar from my GitHub profile.
@@ -78,13 +81,31 @@ This repository includes a GitHub Actions that automatically updates the favicon
    - `public/images/avatar.png` – used for the site's header image.
 5. Commits and pushes the changes automatically.
 
-### 🗃️ Related Files
+#### 🗃️ Related Files
 
 - **Action**: `.github/workflows/update-favicon.yml`
 - **Script**: `scripts/check_avatar.py`
 - **Cache**: `.avatar_hash`
 
 This ensures the site's favicon and header image are always up-to-date with my GitHub avatar.
+
+### 🔄 Automatic Screenshot Updates
+
+This repository includes a GitHub Actions that automatically updates the screenshots in the README file after a successful deployment to Vercel.
+
+#### 🤔 How It Works
+
+1. **Runs on every successful deployment** to Vercel.
+2. Uses `puppeteer` to take screenshots of the website in both light and dark modes.
+3. Saves the screenshots as `screenshot-light.png` and `screenshot-dark.png`.
+4. If the screenshots have changed, it commits and pushes the changes to the repository.
+
+### 🗃️ Related Files
+
+- **Action**: `.github/workflows/update-screenshots.yml`
+- **Script**: `scripts/update_screenshots.py`
+
+This ensures the README file always has up-to-date screenshots of the website.
 
 ## 💻 Screenshots
 
