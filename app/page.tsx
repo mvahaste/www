@@ -49,7 +49,7 @@ const components = {
   },
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   strong: (props: any) => (
-    <span className="font-semibold">{props.children}</span>
+    <span className="font-semibold antialiased">{props.children}</span>
   ),
 };
 
