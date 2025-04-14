@@ -2,8 +2,10 @@ name: Update Screenshots
 
 on:
   workflow_dispatch:
-  deployment_status:
-    state: success
+  pull_request:
+    types: [opened]
+  # deployment_status:
+  #   state: success
 
 jobs:
   update-screenshots:
@@ -11,18 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Get branch name
-        run: |
-          BRANCH_NAME=$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')
-
-          if [ -z "$BRANCH_NAME" ]; then
-            echo "Branch name not found. Exiting."
-            exit 1
-          fi
-
-          echo "Branch name: $BRANCH_NAME"
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Get deployment URL from GitHub API
         run: |
@@ -71,7 +61,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add screenshot-*
             git commit -m "Update screenshots"
-            git push origin $BRANCH_NAME
+            git push origin ${{ github.head_ref }}
           else
             echo "No changes to commit."
           fi
