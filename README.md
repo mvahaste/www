@@ -96,7 +96,7 @@ This repository includes a GitHub Actions workflow that keeps the site's favicon
 
 - **Workflow**: `.github/workflows/update-favicon.yml`
 - **Script**: `scripts/check_avatar.py`
-- **Cache File**: `.avatar_hash`
+- **Hash File**: `.avatar_hash`
 
 This ensures the site's visuals remain current with my GitHub profile.
 
@@ -118,9 +118,7 @@ To prevent infinite loops, the workflow is set to ignore changes to the `screens
 #### 🗃️ Relevant Files
 
 - **Workflow**: `.github/workflows/update-screenshots.yml`
-- **Scripts**:
-  - `scripts/update_screenshots.js`
-  - `scripts/build_check.sh`
+- **Script**: `scripts/update_screenshots.js`
 
 This ensures the README always reflects the latest visual state of the website.
 
