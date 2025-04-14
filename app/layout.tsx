@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
+        className={`${robotoSans.variable} ${robotoMono.variable} theme-coffee antialiased`}
       >
         <ThemeProvider
           attribute="class"
