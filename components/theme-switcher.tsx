@@ -63,9 +63,7 @@ const ThemeSwitcher = ({ type, options }: ThemeSwitcherProps) => {
 
   if (!mounted) return null;
 
-  const [color = defaultColor, mode = defaultMode] = (
-    resolvedTheme ?? defaultTheme
-  ).split("-");
+  const [color, mode] = (resolvedTheme ?? defaultTheme).split("-");
 
   const currentValue = type === "mode" ? mode : color;
 
