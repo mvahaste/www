@@ -65,7 +65,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add screenshot-*
             git commit -m "Update screenshots"
-            git push origin HEAD:main
+            git push
           else
             echo "No changes to commit."
           fi
