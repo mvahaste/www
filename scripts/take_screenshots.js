@@ -46,8 +46,10 @@ async function captureScreenshots(deploymentUrl) {
     await page.screenshot({ path: `screenshot-${theme}.png`, fullPage: true });
   }
 
-  await captureScreenshot("light");
-  await captureScreenshot("dark");
+  await captureScreenshot("forest-light");
+  await captureScreenshot("forest-dark");
+  await captureScreenshot("coffee-light");
+  await captureScreenshot("coffee-dark");
 
   await browser.close();
 }
