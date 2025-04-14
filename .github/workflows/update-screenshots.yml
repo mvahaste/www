@@ -9,14 +9,19 @@ jobs:
   update-screenshots:
     runs-on: macos-latest
     steps:
-      - name: Echo deployment ref
+      - name: Get branch name
         run: |
-          echo "Deployment ref: ${{ github.event.deployment.ref }}"
+          BRANCH_NAME =$(git name-rev --refs=\"refs/heads/*\" --name-only ${{ github.event.deployment.sha }})
+
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "Branch name not found. Exiting."
+            exit 1
+          fi
+
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.deployment.ref }}
 
       - name: Get deployment URL from GitHub API
         run: |
@@ -65,7 +70,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add screenshot-*
             git commit -m "Update screenshots"
-            git push
+            git push origin $BRANCH_NAME
           else
             echo "No changes to commit."
           fi
