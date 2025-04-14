@@ -1,4 +1,6 @@
 const puppeteer = require("puppeteer");
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Capture screenshots of the website with different themes.
@@ -57,6 +59,19 @@ async function captureScreenshots(deploymentUrl) {
   await browser.close();
 }
 
+// Get the deployment URL from command line arguments
 const deploymentUrl = process.argv[2];
+
+if (!deploymentUrl) {
+  console.error("Please provide the deployment URL as an argument.");
+  process.exit(1);
+}
+
+// Ensure the screenshots directory exists
+const screenshotsDir = path.join(__dirname, "screenshots");
+
+if (!fs.existsSync(screenshotsDir)) {
+  fs.mkdirSync(screenshotsDir);
+}
 
 captureScreenshots(deploymentUrl);
