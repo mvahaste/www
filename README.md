@@ -21,7 +21,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Color Themes** - Pleasant color themes with light and dark modes.
 - **Contact Form** - Reach out through the contact form.
 - **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
-- **Automatic Screenshot Updates** - README screenshots updated automatically on successful deployment.
+- **Automatic Screenshot Updates** - README screenshots updated automatically on `main` branch pushes.
 
 ## 🧰 Technologies
 
@@ -106,14 +106,14 @@ This repository also includes a GitHub Actions workflow that updates website scr
 
 #### 🛠️ How It Works
 
-1. **Triggered on every successful deployment** to Vercel or can be run manually.
+1. **Triggered on every push** to the `main` branch or can be triggered manually.
 2. Uses `puppeteer` to capture screenshots of the site in both light and dark modes.
 3. Saves the screenshots as:
    - `screenshot-light.png`
    - `screenshot-dark.png`
 4. If any changes are detected, the updated screenshots are committed and pushed automatically.
 
-To prevent an infinite loop of deployments and commits, a custom script checks for meaningful changes in the application before proceeding with a build. It ignores files and directories that don't impact the deployed app.
+To prevent infinite loops, the workflow is set to ignore changes to the `screenshots/` directory, as well as a few other files that should not trigger the workflow.
 
 > The repository name, API URL, and access token are all pulled from default environment variables — no hardcoding.
 
