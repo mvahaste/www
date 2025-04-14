@@ -107,10 +107,8 @@ This repository also includes a GitHub Actions workflow that updates website scr
 #### 🛠️ How It Works
 
 1. **Triggered on every push** to the `main` branch or can be triggered manually.
-2. Uses `puppeteer` to capture screenshots of the site in both light and dark modes.
-3. Saves the screenshots as:
-   - `screenshot-light.png`
-   - `screenshot-dark.png`
+2. Uses `puppeteer` to capture screenshots of the site with all color themes in both light and dark modes.
+3. Saves the screenshots `<theme>-<mode>.png` in the `screenshots/` directory.
 4. If any changes are detected, the updated screenshots are committed and pushed automatically.
 
 To prevent infinite loops, the workflow is set to ignore changes to the `screenshots/` directory, as well as a few other files that should not trigger the workflow.
