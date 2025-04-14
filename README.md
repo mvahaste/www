@@ -134,9 +134,9 @@ This is how the website looks with different color themes.
 
 <summary>Forest</summary>
 
-| Forest Light                                            | Forest Dark                                           |
-| ------------------------------------------------------- | ----------------------------------------------------- |
-| ![Forest light screenshot](screenshot-forest-light.png) | ![Forest dark screenshot](screenshot-forest-dark.png) |
+| Forest Light                                                        | Forest Dark                                                       |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Forest light screenshot](screenshots/screenshot-forest-light.png) | ![Forest dark screenshot](screenshots/screenshot-forest-dark.png) |
 
 </details>
 
@@ -144,9 +144,9 @@ This is how the website looks with different color themes.
 
 <summary>Coffee</summary>
 
-| Coffee Light                                            | Coffee Dark                                           |
-| ------------------------------------------------------- | ----------------------------------------------------- |
-| ![Coffee light screenshot](screenshot-coffee-light.png) | ![Coffee dark screenshot](screenshot-coffee-dark.png) |
+| Coffee Light                                                        | Coffee Dark                                                       |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Coffee light screenshot](screenshots/screenshot-coffee-light.png) | ![Coffee dark screenshot](screenshots/screenshot-coffee-dark.png) |
 
 </details>
 

@@ -43,7 +43,10 @@ async function captureScreenshots(deploymentUrl) {
       });
     }
 
-    await page.screenshot({ path: `screenshot-${theme}.png`, fullPage: true });
+    await page.screenshot({
+      path: `screenshots/screenshot-${theme}.png`,
+      fullPage: true,
+    });
   }
 
   await captureScreenshot("forest-light");

@@ -5,9 +5,14 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "README.md"
+      - "scripts/**"
+      - "screenshots/**"
 
 jobs:
   update-screenshots:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: macos-latest
     steps:
       - name: Checkout code
@@ -31,8 +36,8 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           if [[ `git status --porcelain` ]]; then
-            git add screenshot-*
-            git commit -m "Update screenshots"
+            git add screenshots/*
+            git commit -m "Update screenshots [skip ci]"
             git push origin main
           else
             echo "No changes to commit."
