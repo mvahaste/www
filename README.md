@@ -1,4 +1,4 @@
-# ☕ mvahaste.dev
+# 🌲 mvahaste.dev
 
 This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features simple animations for a bit of character. This repository is pretty overkill for what it is, but I enjoy working on it.
 
@@ -16,9 +16,9 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 ## ✨ Features
 
 - **Responsive Layout** - The website adapts to different screen sizes.
-- **Clean Design** - Simple, elegant design with a cream/coffee pastel color theme. ☕
+- **Clean Design** - Simple, elegant design with a soft/pastel colors.
 - **Animations** - Staggered fade and slide-in animations on page load, as well as a wave. 👋
-- **Dark/Light Mode** - A pleasant color scheme with light and dark mode options.
+- **Color Themes** - Pleasant color themes with light and dark modes.
 - **Contact Form** - Reach out through the contact form.
 - **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
 - **Automatic Screenshot Updates** - README screenshots updated automatically on successful deployment.
@@ -128,11 +128,27 @@ This ensures the README always reflects the latest visual state of the website.
 
 ## 💻 Screenshots
 
-This is how the website looks in both light and dark modes.
+This is how the website looks with different color themes.
 
-| Light Mode                                     | Dark Mode                                    |
-| ---------------------------------------------- | -------------------------------------------- |
-| ![Light mode screenshot](screenshot-light.png) | ![Dark mode screenshot](screenshot-dark.png) |
+<details>
+
+<summary>Forest</summary>
+
+| Forest Light                                            | Forest Dark                                           |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Forest light screenshot](screenshot-forest-light.png) | ![Forest dark screenshot](screenshot-forest-dark.png) |
+
+</details>
+
+<details>
+
+<summary>Coffee</summary>
+
+| Coffee Light                                            | Coffee Dark                                           |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Coffee light screenshot](screenshot-coffee-light.png) | ![Coffee dark screenshot](screenshot-coffee-dark.png) |
+
+</details>
 
 ## 📜 License
 

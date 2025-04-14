@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { availableThemes, defaultTheme } from "@/components/theme-switcher";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -45,11 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoSans.variable} ${robotoMono.variable} theme-coffee antialiased`}
+        className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
       >
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
+          attribute="data-theme"
+          themes={availableThemes}
+          defaultTheme={defaultTheme}
           enableSystem
           disableTransitionOnChange
         >
