@@ -14,7 +14,7 @@ jobs:
 
       - name: Get branch name
         run: |
-          BRANCH_NAME=$(git name-rev --refs=\"refs/heads/*\" --name-only ${{ github.event.deployment.sha }})
+          BRANCH_NAME=$(git name-rev --refs='refs/heads/*' --name-only ${{ github.event.deployment.sha }})
 
           if [ -z "$BRANCH_NAME" ]; then
             echo "Branch name not found. Exiting."
