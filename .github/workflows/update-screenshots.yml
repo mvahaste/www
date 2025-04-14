@@ -9,6 +9,9 @@ jobs:
   update-screenshots:
     runs-on: macos-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Get branch name
         run: |
           BRANCH_NAME =$(git name-rev --refs=\"refs/heads/*\" --name-only ${{ github.event.deployment.sha }})
@@ -18,10 +21,8 @@ jobs:
             exit 1
           fi
 
+          echo "Branch name: $BRANCH_NAME"
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-
-      - name: Checkout code
-        uses: actions/checkout@v3
 
       - name: Get deployment URL from GitHub API
         run: |
