@@ -15,7 +15,8 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v3
-        ref: ${{ github.event.deployment.ref }}
+        with:
+          ref: ${{ github.event.deployment.ref }}
 
       - name: Get deployment URL from GitHub API
         run: |
