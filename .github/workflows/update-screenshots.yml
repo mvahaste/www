@@ -52,12 +52,16 @@ jobs:
         run: |
           node scripts/take_screenshots.js $DEPLOYMENT_URL
 
+      - name: Get deployment ref (branch)
+        run: |
+          echo "BRANCH_REF=${{ github.event.deployment.ref }}" >> $GITHUB_ENV
+
       - name: Commit and push updated screenshots
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           if [[ `git status --porcelain` ]]; then
-            git add screenshot-light.png screenshot-dark.png
+            git add screenshot-*
             git commit -m "Update screenshots"
             git push origin HEAD:main
           else
