@@ -5,7 +5,7 @@ const path = require("path");
 /**
  * Capture screenshots of the website with different themes.
  */
-async function captureScreenshots(deploymentUrl) {
+async function captureScreenshots(deploymentUrl, screenshotsDir) {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
@@ -46,9 +46,11 @@ async function captureScreenshots(deploymentUrl) {
     }
 
     await page.screenshot({
-      path: `screenshots/screenshot-${theme}.png`,
+      path: path.join(screenshotsDir, `${theme}.png`),
       fullPage: true,
     });
+
+    console.log(`Screenshot taken for theme: ${theme}`);
   }
 
   await captureScreenshot("forest-light");
@@ -68,10 +70,12 @@ if (!deploymentUrl) {
 }
 
 // Ensure the screenshots directory exists
-const screenshotsDir = path.join(__dirname, "screenshots");
+const screenshotsDir = path.join(__dirname, "../screenshots");
 
 if (!fs.existsSync(screenshotsDir)) {
   fs.mkdirSync(screenshotsDir);
+
+  console.log(`Created directory: ${screenshotsDir}`);
 }
 
-captureScreenshots(deploymentUrl);
+captureScreenshots(deploymentUrl, screenshotsDir);
