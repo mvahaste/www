@@ -73,7 +73,7 @@ export const ThemeModeSwitcher = () => {
       onClick={handleToggle}
       title={`Switch to ${nextOption.label} mode`}
     >
-      <currentOption.icon size={ICON_SIZE} />
+      <nextOption.icon size={ICON_SIZE} />
     </Button>
   );
 };
