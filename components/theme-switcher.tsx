@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   LucideCoffee,
-  LucideLaptop,
   LucideMoon,
+  LucidePalette,
   LucideSun,
   LucideTreePine,
 } from "lucide-react";
@@ -20,20 +20,18 @@ import { useEffect, useState } from "react";
 
 const ICON_SIZE = 16;
 
-const useMounted = () => {
-  const [mounted, setMounted] = useState(false);
+interface ThemeOption {
+  value: string;
+  label: string;
+  icon: React.ElementType;
+}
 
-  useEffect(() => setMounted(true), []);
-
-  return mounted;
-};
-
-const modeOptions = [
+const modeOptions: ThemeOption[] = [
   { value: "light", label: "Light", icon: LucideSun },
   { value: "dark", label: "Dark", icon: LucideMoon },
 ];
 
-const colorOptions = [
+const colorOptions: ThemeOption[] = [
   { value: "forest", label: "Forest", icon: LucideTreePine },
   { value: "coffee", label: "Coffee", icon: LucideCoffee },
 ];
@@ -41,61 +39,78 @@ const colorOptions = [
 const defaultMode = modeOptions[0].value;
 const defaultColor = colorOptions[0].value;
 
-export const defaultTheme = `${defaultColor}-${defaultMode}`;
-export const availableThemes = [
-  ...colorOptions.flatMap((color) =>
-    modeOptions.map((mode) => `${color.value}-${mode.value}`),
-  ),
-];
+export const defaultTheme: string = `${defaultColor}-${defaultMode}`;
 
-interface ThemeSwitcherProps {
-  type: "mode" | "color";
-  options: {
-    value: string;
-    label: string;
-    icon: React.ElementType;
-  }[];
-}
+export const availableThemes: string[] = colorOptions.flatMap((color) =>
+  modeOptions.map((mode) => `${color.value}-${mode.value}`),
+);
 
-const ThemeSwitcher = ({ type, options }: ThemeSwitcherProps) => {
+const useMounted = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
+};
+
+export const ThemeModeSwitcher = () => {
   const mounted = useMounted();
   const { resolvedTheme, setTheme } = useTheme();
 
   if (!mounted) return null;
 
   const [color, mode] = (resolvedTheme ?? defaultTheme).split("-");
+  const currentIndex = modeOptions.findIndex((opt) => opt.value === mode);
 
-  const currentValue = type === "mode" ? mode : color;
+  const currentOption = modeOptions[currentIndex] ?? modeOptions[0];
+  const nextOption = modeOptions[(currentIndex + 1) % modeOptions.length];
 
-  const handleChange = (value: string) => {
-    const newTheme = type === "mode" ? `${color}-${value}` : `${value}-${mode}`;
+  const handleToggle = () => setTheme(`${color}-${nextOption.value}`);
 
-    setTheme(newTheme);
-  };
+  return (
+    <Button
+      size="icon"
+      variant="ghost"
+      className="cursor-pointer"
+      onClick={handleToggle}
+      title={`Switch to ${nextOption.label} mode`}
+    >
+      <currentOption.icon size={ICON_SIZE} />
+    </Button>
+  );
+};
 
-  const CurrentIcon =
-    options.find((opt) => opt.value === currentValue)?.icon ?? LucideLaptop;
+interface DropdownSwitcherProps {
+  value: string;
+  onChange: (value: string) => void;
+  options: ThemeOption[];
+  icon?: React.ElementType;
+  triggerTitle?: string;
+}
 
+const DropdownSwitcher = ({
+  value,
+  onChange,
+  options,
+  icon: TriggerIcon = LucidePalette,
+  triggerTitle = "Switch theme",
+}: DropdownSwitcherProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           size="icon"
           variant="ghost"
-          className="flex items-center gap-2 border hover:cursor-pointer"
+          className="cursor-pointer"
+          title={triggerTitle}
         >
-          <CurrentIcon size={ICON_SIZE} />
+          <TriggerIcon size={ICON_SIZE} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-content" align="start">
-        <DropdownMenuRadioGroup
-          value={currentValue}
-          onValueChange={handleChange}
-        >
+        <DropdownMenuRadioGroup value={value} onValueChange={onChange}>
           {options.map(({ value, label, icon: Icon }) => (
             <DropdownMenuRadioItem
               key={value}
-              className="flex gap-2 hover:cursor-pointer"
+              className="flex cursor-pointer gap-2"
               value={value}
             >
               <Icon size={ICON_SIZE} /> <span>{label}</span>
@@ -107,12 +122,21 @@ const ThemeSwitcher = ({ type, options }: ThemeSwitcherProps) => {
   );
 };
 
-const ThemeModeSwitcher = () => (
-  <ThemeSwitcher type="mode" options={modeOptions} />
-);
+export const ThemeColorSwitcher = () => {
+  const mounted = useMounted();
+  const { resolvedTheme, setTheme } = useTheme();
 
-const ThemeColorSwitcher = () => (
-  <ThemeSwitcher type="color" options={colorOptions} />
-);
+  if (!mounted) return null;
 
-export { ThemeModeSwitcher, ThemeColorSwitcher };
+  const [color, mode] = (resolvedTheme ?? defaultTheme).split("-");
+  const handleChange = (value: string) => setTheme(`${value}-${mode}`);
+
+  return (
+    <DropdownSwitcher
+      value={color}
+      onChange={handleChange}
+      options={colorOptions}
+      triggerTitle="Change theme color"
+    />
+  );
+};
