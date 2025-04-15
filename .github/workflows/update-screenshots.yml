@@ -12,7 +12,7 @@ on:
 
 jobs:
   update-screenshots:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: "!contains(github.event.head_commit.message, '[skip ci]')" # Fail-safe check to skip CI
     runs-on: macos-latest
     steps:
       - name: Checkout code
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "20.x"
+          node-version: "22.x"
 
       - name: Install dependencies
         run: npm ci
