@@ -9,7 +9,7 @@ export default function Header() {
           <AnimatedAvatar />
           <h1 className="font-bold">mvahaste</h1>
         </div>
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center">
           <ThemeColorSwitcher />
           <ThemeModeSwitcher />
         </div>
