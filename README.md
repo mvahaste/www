@@ -102,7 +102,7 @@ This ensures the site's visuals remain current with my GitHub profile.
 
 ### 🔄 Automatic Screenshot Updates
 
-This repository also includes a GitHub Actions workflow that updates website screenshots in the README after each successful Vercel deployment.
+This repository also includes a GitHub Actions workflow that automatically updates the screenshots in the README to keep them up to date.
 
 #### 🛠️ How It Works
 
