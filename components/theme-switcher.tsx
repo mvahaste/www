@@ -58,9 +58,9 @@ export const ThemeModeSwitcher = () => {
   if (!mounted) return null;
 
   const [color, mode] = (resolvedTheme ?? defaultTheme).split("-");
+
   const currentIndex = modeOptions.findIndex((opt) => opt.value === mode);
 
-  const currentOption = modeOptions[currentIndex] ?? modeOptions[0];
   const nextOption = modeOptions[(currentIndex + 1) % modeOptions.length];
 
   const handleToggle = () => setTheme(`${color}-${nextOption.value}`);
