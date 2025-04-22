@@ -20,22 +20,20 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "mvahaste.dev",
-  description: "Hi, I'm Mikk 👋",
+  description:
+    "Hi, I'm Mikk — a front-end-focused web developer and informatics student at the University of Tartu. Sometimes I get lost and end up in the back-end.",
   openGraph: {
     type: "website",
     url: "https://mvahaste.dev",
-    title: "mvahaste.dev",
-    description: "Hi, I'm Mikk 👋",
+    siteName: "mvahaste.dev",
     images: [
       {
         url: "https://mvahaste.dev/images/avatar.jpg",
         alt: "mvahaste.dev",
       },
     ],
-    siteName: "mvahaste.dev",
   },
   creator: "Mikk Vahaste",
-  keywords: ["mikk", "vahaste", "web", "development", "student", "tartu"],
 };
 
 export default function RootLayout({
