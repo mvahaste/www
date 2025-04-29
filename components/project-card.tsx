@@ -22,11 +22,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       }}
       className="bg-card dark:bg-card/50 text-card-foreground flex flex-col justify-between gap-2 overflow-hidden rounded-lg border text-sm"
     >
-      <div className="flex flex-col gap-2 px-6 pt-5 pb-0">
-        <h3 className={`${lora.className} text-base font-bold`}>
-          {project.title}
-        </h3>
-        <p>{project.description}</p>
+      <div className="flex flex-grow flex-col justify-between gap-2 px-6 pt-5 pb-0">
+        <div className="flex flex-col gap-2">
+          <h3 className={`${lora.className} text-base font-bold`}>
+            {project.title}
+          </h3>
+          <p>{project.description}</p>
+        </div>
         <div className="mt-2 flex flex-wrap gap-2">
           {project.stack.map((s: string) => (
             <span

@@ -10,6 +10,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export interface Social {
   id: number;
@@ -48,13 +49,13 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     id: 1,
-    name: "TypeScript",
-    icon: SiTypescript,
+    name: "Next.js",
+    icon: SiNextdotjs,
   },
   {
     id: 2,
-    name: "Next.js",
-    icon: SiNextdotjs,
+    name: "TypeScript",
+    icon: SiTypescript,
   },
   {
     id: 3,
@@ -63,18 +64,23 @@ export const skills: Skill[] = [
   },
   {
     id: 4,
+    name: "Java",
+    icon: FaJava,
+  },
+  {
+    id: 5,
+    name: "PostgreSQL",
+    icon: BiLogoPostgresql,
+  },
+  {
+    id: 6,
     name: "Supabase",
     icon: SiSupabase,
   },
   {
-    id: 5,
+    id: 7,
     name: "Python",
     icon: SiPython,
-  },
-  {
-    id: 6,
-    name: "PostgreSQL",
-    icon: BiLogoPostgresql,
   },
 ];
 
@@ -82,10 +88,6 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image?: {
-    light?: string;
-    dark?: string;
-  };
   stack: string[];
   url?: string;
   source?: string;
@@ -97,10 +99,6 @@ export const projects: Project[] = [
     title: "Linkbook",
     description:
       "A lightweight link bookmarking web app that helps you organize and save important links, with support for metadata autofill and custom tags.",
-    image: {
-      light: "/images/projects/linkbook-light.png",
-      dark: "/images/projects/linkbook-dark.png",
-    },
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     url: "https://linkbook.mvahaste.dev",
     source: "https://github.com/mvahaste/linkbook",
@@ -110,10 +108,6 @@ export const projects: Project[] = [
     title: "Chirp",
     description:
       "A simple Twitter clone built to explore and learn Supabase. Features include creating posts, liking and replying to posts, following users, and editing profiles.",
-    image: {
-      light: "/images/projects/chirp-light.png",
-      dark: "/images/projects/chirp-dark.png",
-    },
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     url: "https://chirp.mvahaste.dev",
     source: "https://github.com/mvahaste/chirp",
@@ -123,15 +117,13 @@ export const projects: Project[] = [
     title: "Hansa Medical Tellimiskeskkond",
     description:
       "A web platform developed for Hansa Medical partners to conveniently order medical supplies and equipment, as well as review past orders and active contracts.",
-    // image: { light: "/images/projects/hansamedical-tellimiskeskkond.png" },
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: 4,
     title: "Hansa Medical Uneravi",
     description:
-      "An e-commerce website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
-    // image: { light: "/images/projects/hansamedical-uneravi.png" },
+      "A website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
 ];

@@ -18,6 +18,6 @@ Here are some of my projects—while some code is private, I'm happy to share de
 
 ## Skills
 
-Some of the languages and tools I work with.
+Some of the languages and tools I work or have experience with.
 
 <SkillsList />
