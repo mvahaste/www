@@ -114,16 +114,18 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Hansa Medical Tellimiskeskkond",
+    title: "Unit CI Testing",
     description:
-      "A web platform developed for Hansa Medical partners to conveniently order medical supplies and equipment, as well as review past orders and active contracts.",
-    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+      "A simple FastAPI-based application designed to manage a todo list, created with the goal of learning FastAPI, unit testing with pytest, and GitHub Actions for continuous integration.",
+    stack: ["Python", "GitHub Actions"],
+    source: "https://github.com/mvahaste/unit-ci-testing",
   },
   {
     id: 4,
-    title: "Hansa Medical Uneravi",
+    title: "VSCode Vim",
     description:
-      "A website designed for individuals with sleep apnea to purchase CPAP machines and related accessories that support better sleep quality.",
-    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+      "A step-by-step guide for configuring VS Code to replicate the minimal and efficient workflow of Vim. Created as a personal project before fully transitioning to Vim",
+    stack: ["CSS", "Markdown"],
+    source: "https://github.com/mvahaste/vscode-vim",
   },
 ];

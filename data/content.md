@@ -12,7 +12,7 @@ Want to chat? Reach out to me at **mvahaste@proton.me**!
 
 ## Projects
 
-Here are some of my projects—while some code is private, I'm happy to share details!
+Here are some of my public projects.
 
 <ProjectsGrid />
 
