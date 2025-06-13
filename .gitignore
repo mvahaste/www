@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# intellij
+.idea/.gitignore
+.idea/modules.xml
+.idea/prettier.xml
+.idea/vcs.xml
+.idea/www.iml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
