@@ -17,8 +17,7 @@ const components = {
   Socials,
   ProjectsGrid,
   SkillsList,
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  h2: (props: any) => {
+  h2: (props: React.ComponentProps<"h2">) => {
     return (
       <motion.h2
         variants={{
@@ -32,8 +31,7 @@ const components = {
       </motion.h2>
     );
   },
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  p: (props: any) => {
+  p: (props: React.ComponentProps<"p">) => {
     return (
       <motion.p
         variants={{
@@ -47,8 +45,7 @@ const components = {
       </motion.p>
     );
   },
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  strong: (props: any) => (
+  strong: (props: React.ComponentProps<"strong">) => (
     <span className="font-semibold">{props.children}</span>
   ),
 };
