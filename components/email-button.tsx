@@ -1,10 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { LucideCopy, LucideExternalLink, LucideMailOpen } from "lucide-react";
+import { LucideCopy, LucideExternalLink } from "lucide-react";
 import { useState } from "react";
 import { SiMaildotru } from "react-icons/si";
-import ContactForm from "./contact-form";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -20,7 +19,6 @@ interface EmailButtonProps {
 
 export default function EmailButton({ email, className }: EmailButtonProps) {
   const [copyText, setCopyText] = useState("Copy to clipboard");
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const copy = () => {
     navigator.clipboard.writeText(email);
@@ -56,19 +54,8 @@ export default function EmailButton({ email, className }: EmailButtonProps) {
             <LucideExternalLink className="text-foreground" />
             <span>Open in email client</span>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => setIsContactFormOpen(true)}
-            className="hover:cursor-pointer"
-          >
-            <LucideMailOpen className="text-foreground" />
-            <span>Open contact form</span>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <ContactForm
-        isOpen={isContactFormOpen}
-        setIsOpenAction={setIsContactFormOpen}
-      />
     </>
   );
 }
