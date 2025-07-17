@@ -32,8 +32,8 @@ const modeOptions: ThemeOption[] = [
 ];
 
 const colorOptions: ThemeOption[] = [
-  { value: "forest", label: "Forest", icon: LucideTreePine },
   { value: "coffee", label: "Coffee", icon: LucideCoffee },
+  { value: "forest", label: "Forest", icon: LucideTreePine },
 ];
 
 const defaultMode = modeOptions[0].value;
