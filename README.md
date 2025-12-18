@@ -1,4 +1,4 @@
-# 🌲 mvahaste.dev
+# ☕ mvahaste.dev
 
 This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features simple animations for a bit of character. This repository is pretty overkill for what it is, but I enjoy working on it.
 
