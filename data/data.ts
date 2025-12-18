@@ -1,16 +1,17 @@
 import { IconType } from "react-icons";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { FaJava } from "react-icons/fa";
 import {
+  SiDocker,
   SiGithub,
   SiLinkedin,
   SiMaildotru,
   SiNextdotjs,
   SiPython,
-  SiSupabase,
   SiTailwindcss,
   SiTypescript,
+  SiVuedotjs,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 
 export interface Social {
   id: number;
@@ -36,7 +37,7 @@ export const socials: Social[] = [
     id: 3,
     name: "LinkedIn",
     icon: SiLinkedin,
-    url: "https://www.linkedin.com/in/mvahaste",
+    url: "https://linkedin.com/in/mvahaste",
   },
 ];
 
@@ -54,33 +55,38 @@ export const skills: Skill[] = [
   },
   {
     id: 2,
+    name: "Vue.js",
+    icon: SiVuedotjs,
+  },
+  {
+    id: 3,
     name: "TypeScript",
     icon: SiTypescript,
   },
   {
-    id: 3,
+    id: 4,
     name: "Tailwind CSS",
     icon: SiTailwindcss,
   },
   {
-    id: 4,
+    id: 5,
     name: "Java",
     icon: FaJava,
   },
   {
-    id: 5,
+    id: 6,
     name: "PostgreSQL",
     icon: BiLogoPostgresql,
-  },
-  {
-    id: 6,
-    name: "Supabase",
-    icon: SiSupabase,
   },
   {
     id: 7,
     name: "Python",
     icon: SiPython,
+  },
+  {
+    id: 8,
+    name: "Docker",
+    icon: SiDocker,
   },
 ];
 
@@ -100,7 +106,6 @@ export const projects: Project[] = [
     description:
       "A lightweight link bookmarking web app that helps you organize and save important links, with support for metadata autofill and custom tags.",
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
-    url: "https://linkbook.mvahaste.dev",
     source: "https://github.com/mvahaste/linkbook",
   },
   {
@@ -109,7 +114,6 @@ export const projects: Project[] = [
     description:
       "A simple Twitter clone built to explore and learn Supabase. Features include creating posts, liking and replying to posts, following users, and editing profiles.",
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
-    url: "https://chirp.mvahaste.dev",
     source: "https://github.com/mvahaste/chirp",
   },
   {
@@ -117,7 +121,7 @@ export const projects: Project[] = [
     title: "Unit CI Testing",
     description:
       "A simple FastAPI-based application designed to manage a todo list, created with the goal of learning FastAPI, unit testing with pytest, and GitHub Actions for continuous integration.",
-    stack: ["Python", "GitHub Actions"],
+    stack: ["Python", "CI/CD", "GitHub Actions"],
     source: "https://github.com/mvahaste/unit-ci-testing",
   },
   {

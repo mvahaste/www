@@ -9,6 +9,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
@@ -46,6 +48,10 @@ export default function EmailButton({ email, className }: EmailButtonProps) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-content" align="start">
+          <DropdownMenuLabel>
+            <span>{email}</span>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
           <DropdownMenuItem onClick={copy} className="hover:cursor-pointer">
             <LucideCopy className="text-foreground" />
             <span>{copyText}</span>

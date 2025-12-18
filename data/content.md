@@ -1,12 +1,12 @@
 ## Hi, I'm Mikk <WaveEmoji />
 
-I'm a **22-year-old** informatics student at the **University of Tartu**, mainly focused on **front-end** with some back-end experience. I got into coding through Python and quickly found my way to web development.
+I'm a **23-year-old** Informatics student at the **University of Tartu**, mainly focused on front-end development with some back-end experience. I enjoy building clean, functional user interfaces, and I'm interested in growing as a full-stack developer.
 
-Outside of coding, I enjoy gaming—my favorites are **ELDEN RING** and **Subnautica**, followed by the rest of the **Souls** series—listening to music, going to the gym, and reading when I get the chance.
+I'm also interested in homelabbing and self-hosting, as well as reading and playing video games. I especially love soulsborne games, with **DARK SOULS I** and **ELDEN RING** being my favorites.
 
 ## Contact
 
-Want to chat? Reach out to me at **mvahaste@proton.me**!
+Want to connect? Reach out to me at **mvahaste@proton.me**!
 
 <Socials />
 
@@ -18,6 +18,6 @@ Here are some of my public projects.
 
 ## Skills
 
-Some of the languages and tools I work or have experience with.
+Some of the languages, tools, and frameworks I work or have experience with.
 
 <SkillsList />
