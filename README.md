@@ -1,19 +1,19 @@
-# ☕ mvahaste.dev
+# mvahaste.dev
 
 This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It's designed with a clean, responsive layout and features simple animations for a bit of character. This repository is pretty overkill for what it is, but I enjoy working on it.
 
-## 🔖 Table of Contents
+## Table of Contents
 
-- [✨ Features](#-features)
-- [🧰 Technologies](#-technologies)
-- [⚙️ Installation](#%EF%B8%8F-installation)
-- [🤖 GitHub Actions](#-github-actions)
-  - [🔄 Automatic Favicon and Header Image Updates](#-automatic-favicon-and-header-image-updates)
-  - [🔄 Automatic Screenshot Updates](#-automatic-screenshot-updates)
-- [💻 Screenshots](#-screenshots)
-- [📜 License](#-license)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [GitHub Actions](#github-actions)
+  - [Automatic Favicon and Header Image Updates](#automatic-favicon-and-header-image-updates)
+  - [Automatic Screenshot Updates](#automatic-screenshot-updates)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-## ✨ Features
+## Features
 
 - **Responsive Layout** - The website adapts to different screen sizes.
 - **Clean Design** - Simple, elegant design with a soft/pastel colors.
@@ -22,7 +22,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - **Automatic Favicon Updates** - Website favicon updated automatically alongside my GitHub avatar.
 - **Automatic Screenshot Updates** - README screenshots updated automatically on `main` branch pushes.
 
-## 🧰 Technologies
+## Technologies
 
 - [Next.js 15](https://nextjs.org/) - Framework for building the site
 - [TailwindCSS](https://tailwindcss.com/) - Styling framework
@@ -32,7 +32,7 @@ This is my personal website, hosted at [mvahaste.dev](https://mvahaste.dev). It'
 - [Vercel](https://vercel.com/) - Hosting platform
 - [GitHub Actions](https://github.com/features/actions) - Automate favicon, header image, and screenshot updates
 
-## ⚙️ Installation
+## Installation
 
 You probably don't need to do this — but just in case, here's how to run the project locally:
 
@@ -64,13 +64,13 @@ You probably don't need to do this — but just in case, here's how to run the p
      npm run start
      ```
 
-## 🤖 GitHub Actions
+## GitHub Actions
 
-### 🔄 Automatic Favicon and Header Image Updates
+### Automatic Favicon and Header Image Updates
 
 This repository includes a GitHub Actions workflow that keeps the site's favicon and header image in sync with my GitHub avatar.
 
-#### 🛠️ How It Works
+#### How It Works
 
 1. **Runs hourly** via a scheduled cron job (`0 * * * *`) or can be triggered manually.
 2. Retrieves the latest avatar from my GitHub profile.
@@ -83,7 +83,7 @@ This repository includes a GitHub Actions workflow that keeps the site's favicon
 
 > The GitHub username is sourced from a default environment variable — no hardcoding involved.
 
-#### 🗃️ Relevant Files
+#### Relevant Files
 
 - **Workflow**: `.github/workflows/update-favicon.yml`
 - **Script**: `scripts/check_avatar.py`
@@ -91,11 +91,11 @@ This repository includes a GitHub Actions workflow that keeps the site's favicon
 
 This ensures the site's visuals remain current with my GitHub profile.
 
-### 🔄 Automatic Screenshot Updates
+### Automatic Screenshot Updates
 
 This repository also includes a GitHub Actions workflow that automatically updates the screenshots in the README to keep them up to date.
 
-#### 🛠️ How It Works
+#### How It Works
 
 1. **Triggered on every push** to the `main` branch or can be triggered manually.
 2. Uses `puppeteer` to capture screenshots of the site with all color themes in both light and dark modes.
@@ -106,14 +106,14 @@ To prevent infinite loops, the workflow is set to ignore changes to the `screens
 
 > The repository name, API URL, and access token are all pulled from default environment variables — no hardcoding.
 
-#### 🗃️ Relevant Files
+#### Relevant Files
 
 - **Workflow**: `.github/workflows/update-screenshots.yml`
 - **Script**: `scripts/update_screenshots.js`
 
 This ensures the README always reflects the latest visual state of the website.
 
-## 💻 Screenshots
+## Screenshots
 
 This is how the website looks with different color themes.
 
@@ -137,6 +137,6 @@ This is how the website looks with different color themes.
 
 </details>
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
